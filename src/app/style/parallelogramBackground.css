@@ -1,0 +1,8 @@
+.parallelogram {
+  --p: 40px; /* Adjust the slant size */
+  position: relative; /* Ensure proper stacking context */
+  padding: 50px 0 50px 0; /* Space inside the section */
+  clip-path: polygon(0 var(--p), 0 100%, 100% calc(100% - var(--p)), 100% 0);
+  background: #f2f8ff;
+  overflow: hidden; /* Prevent content from spilling out */
+}
