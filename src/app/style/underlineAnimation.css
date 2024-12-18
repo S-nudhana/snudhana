@@ -1,33 +1,32 @@
 .underline-animation {
-    position: relative;
-    color: #000D1B;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .underline-animation:focus {
-    outline: none;
-  }
-  
-  .underline-animation:active {
-    transform: scale(1);
-  }
-  
-  .underline-animation:hover {
-    color: 000D1B;
-  }
-  
-  .underline-animation:hover::after {
-    width: 100%;
-  }
-  
-  .underline-animation::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: currentColor;
-    transition: width 0.3s ease-in-out;
-  }
-  
+  position: relative;
+  color: #000d1b;
+  transition: color 0.3s ease-in-out;
+}
+
+.underline-animation:focus {
+  outline: none;
+}
+
+.underline-animation:active {
+  transform: scale(1);
+}
+
+.underline-animation:hover {
+  color: #000d1b;
+}
+
+.underline-animation:hover::after {
+  width: 100%;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease-in-out;
+}

@@ -9,7 +9,7 @@ interface contactLink {
     link: string;
 }
 
-const contactLink = [
+const contactLink: contactLink[] = [
     {
         name: 'Github',
         icons: FaGithub,

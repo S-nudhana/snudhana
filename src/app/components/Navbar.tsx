@@ -15,7 +15,7 @@ interface tabLink {
     title: string;
 }
 
-const tabLink = [
+const tabLink: tabLink[] = [
     { href: "#", title: "Home" },
     { href: "#project", title: "Project" },
     { href: "#stack", title: "Stack" },

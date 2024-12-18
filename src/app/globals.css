@@ -8,10 +8,12 @@
 
   --softWhite: #F8FAFC;
   --paleGray: #e7f1fd;
+  --lightGray: #e9eef3;
   --skyBlue: #D9EAFD;
   --mutedBlue: #BCCCDC;
   --slateBlue: #5a6774;
   --darkSlateGray: #3A4652;
+  --deepBlue: #1A2A3A;
   --deepNavy: #000D1B;
 
   scroll-behavior: smooth;
