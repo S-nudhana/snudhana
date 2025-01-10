@@ -8,9 +8,9 @@ import Contact from "./pages/Contact";
 export default function page() {
   return (
     <>
-      <Home/>
+      <Home />
       <Project/>
-      {/* <Stack/> */}
+      <Stack/>
       <Contact/>
     </>
   );

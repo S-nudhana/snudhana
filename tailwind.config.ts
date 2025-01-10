@@ -10,17 +10,15 @@ export default {
   theme: {
   	extend: {
   		colors: {
-  			softWhite: 'var(--softWhite)',
-  			paleGray: 'var(--paleGray)',
-  			lightGray: 'var(--lightGray)',
-  			skyBlue: 'var(--skyBlue)',
-  			mutedBlue: 'var(--mutedBlue)',
-  			slateBlue: 'var(--slateBlue)',
-  			darkSlateGray: 'var(--darkSlateGray)',
-  			deepBlue: 'var(--deepBlue)',
-  			deepNavy: 'var(--deepNavy)',
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
+			softWhite: 'var(--softWhite)',
+			softBeige: 'var(--softBeige)',
+			lightBeige: 'var(--lightBeige)',
+			beige: 'var(--beige)',
+			darkGray: 'var(--darkGray)',
+			charcoalGray: 'var(--charcoalGray)',
+			black: 'var(--black)',
+			background: 'hsl(var(--background))',
+			foreground: 'hsl(var(--foreground))',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
@@ -85,27 +83,9 @@ export default {
   				to: {
   					height: '0'
   				}
-  			},
-  			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
-  			},
-  			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
   			}
   		},
   		animation: {
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out',
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
   		}

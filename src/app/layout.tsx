@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${lexend.variable} ${tinos.variable}`}>
-      <body className="py-8">
+      <body>
         <Navbar />
         {children}
         <Footer />

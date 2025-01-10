@@ -1,6 +1,6 @@
 .underline-animation {
   position: relative;
-  color: #000d1b;
+  color: #4F4F4E;
   transition: color 0.3s ease-in-out;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .underline-animation:hover {
-  color: #000d1b;
+  color: #373737;
 }
 
 .underline-animation:hover::after {

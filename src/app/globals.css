@@ -6,21 +6,18 @@
   --font-primary: 'Lexend', sans-serif;
   --font-secondary: 'Tinos', serif;
 
-  --softWhite: #F8FAFC;
-  --paleGray: #e7f1fd;
-  --lightGray: #e9eef3;
-  --skyBlue: #D9EAFD;
-  --mutedBlue: #BCCCDC;
-  --slateBlue: #5a6774;
-  --darkSlateGray: #3A4652;
-  --deepBlue: #1A2A3A;
-  --deepNavy: #000D1B;
-
+  --softWhite: #FFFCF7;
+  --softBeige: #F6F1EB;
+  --lightBeige: #e6e2d8;
+  --beige: #B6B1A3;
+  --darkGray: #6E6E6E;
+  --charcoalGray: #4F4F4E;
+  --black: #373737;
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--softWhite);
+  background-color: var(--softBeige);
   margin: 0;
   padding: 0;
 }
@@ -87,5 +84,11 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-width {
+    width: calc(60% - 10px);
   }
 }

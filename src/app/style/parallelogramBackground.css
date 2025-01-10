@@ -1,15 +1,15 @@
 .parallelogram-black {
-  --p: 35px; /* Adjust the slant size */
-  position: relative; /* Ensure proper stacking context */
-  padding: 40px 0 60px 0; /* Space inside the section */
+  --p: 35px;
+  position: relative;
+  padding: 40px 0 60px 0;
   clip-path: polygon(0 var(--p), 0 100%, 100% calc(102% - var(--p)), 100% 0);
-  background: #e9eef3;
-  overflow: hidden; /* Prevent content from spilling out */
+  background: #FFFCF7;
+  overflow: hidden;
 }
 
-@media (min-width: 1024px) { /* Large screens, like laptops */
+@media (min-width: 1024px) {
   .parallelogram-black {
-    --p: 50px; /* Increased slant size */
-    padding: 60px 0 60px 0; /* Adjust padding for larger screens */
+    --p: 50px;
+    padding: 60px 0 60px 0;
   }
 }

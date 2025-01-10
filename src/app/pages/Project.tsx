@@ -12,7 +12,8 @@ interface ProjectItem {
   linkType: string;
   description: string;
   frontend: string;
-  backend: string | null;
+  backend?: string;
+  picture?: string[];
 }
 
 const projectItems: ProjectItem[] = [
@@ -23,7 +24,7 @@ const projectItems: ProjectItem[] = [
     linkType: "In progress",
     description:
       "This project is a web application that allows students to generate a certificate from participated SIT KMUTT events and manage the event by SIT admin and professor.",
-    frontend: "React JS + Chakra UI",
+    frontend: "React JS + Chakra UI + Chart JS",
     backend: "Node.JS + ExpressJS + MySQL",
   },
   {
@@ -33,8 +34,9 @@ const projectItems: ProjectItem[] = [
     linkType: "Visit website",
     description:
       "This project is a web application that displays PM 2.5 data and graph of PM 2.5 value of a period of time from the sensor(node MCU) around SIT Building and CB2 Building in SIT KMUTT area.",
-    frontend: "React JS + Tailwind CSS + MUI",
+    frontend: "React JS + Tailwind CSS + MUI + Grafana",
     backend: "Node.JS + ExpressJS + InfluxDB",
+    picture: ["/images/SIT_PM1.png", "/images/SIT_PM2.png"],
   },
   {
     type: "website",
@@ -44,7 +46,7 @@ const projectItems: ProjectItem[] = [
     description:
       "This is integrated project in 2nd year which is a web application system for students and professor that consist of register system, attendance check system, online course system, online exam system, parking reserved system, payment system and many more in KMUTT.",
     frontend: "React JS + Tailwind CSS + Daisy UI",
-    backend: "Node.JS + ExpressJS + PostgreSQL + Prisma",
+    backend: "Node.JS + ExpressJS + PostgreSQL + Prisma + MinIO",
   },
   {
     type: "website",
@@ -54,7 +56,6 @@ const projectItems: ProjectItem[] = [
     description:
       "This project is a web application that displays my portfolio as website.",
     frontend: "Next JS + TypeScript + Tailwind CSS + Shadcn/UI",
-    backend: null,
   },
   {
     type: "website",
@@ -79,8 +80,8 @@ const filterApplication: ProjectItem[] = projectItems.filter(
 export default function Project() {
   return (
     <section id="project">
-      <div className="w-full h-100dvh text-deepNavy font-primary font-normal">
-        <h1 className="text-[30px] underline underline-offset-[10px] tracking-wider flex justify-center mb-[-32px] lg:mb-[-40px] z-10 relative">
+      <div className="w-full h-100dvh text-charcoalGray font-primary font-normal">
+        <h1 className="text-[30px] underline underline-offset-[10px] tracking-wider flex justify-center mb-[-32px] lg:mb-[-40px] z-10 relative text-black">
           Project
         </h1>
         <div className="parallelogram-black z-0 relative">
@@ -102,26 +103,34 @@ export default function Project() {
             <TabsContent value="website">
               <div>
                 {filterWebsite.map((project, index) => (
-                  <ProjectDisplay index={index} project={project} />
+                  <ProjectDisplay key={index} index={index} project={project} />
                 ))}
               </div>
             </TabsContent>
             <TabsContent value="application">
-              <div
-                className={`${filterApplication.length === 0 ? "hidden" : ""}`}
-              >
-                {filterApplication.map((project, index) => (
-                  <ProjectDisplay index={index} project={project} />
-                ))}
-              </div>
-              <div
-                className={`${
-                  filterApplication.length === 0
-                    ? "flex justify-center items-center h-[300px] text-[18px]"
-                    : "hidden"
-                }`}
-              >
-                No application project...
+              <div>
+                <div
+                  className={`${
+                    filterApplication.length === 0 ? "hidden" : ""
+                  }`}
+                >
+                  {filterApplication.map((project, index) => (
+                    <ProjectDisplay
+                      key={index}
+                      index={index}
+                      project={project}
+                    />
+                  ))}
+                </div>
+                <div
+                  className={`${
+                    filterApplication.length === 0
+                      ? "flex justify-center items-center h-[300px] text-[18px]"
+                      : "hidden"
+                  }`}
+                >
+                  No application project...
+                </div>
               </div>
             </TabsContent>
           </Tabs>
