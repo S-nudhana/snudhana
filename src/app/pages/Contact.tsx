@@ -32,16 +32,16 @@ const contactLink: contactLink[] = [
   },
 ];
 
-export default function Contact() {
+export default function Contact(): JSX.Element {
   return (
-    <section id="contact" className="bg-lightBeige px-10">
-      <div className="w-full flex flex-col items-center text-charcoalGray font-primary font-medium pt-[20px]">
-        <h1 className="text-[22px] font-primary underline underline-offset-4 tracking-wider pb-[20px] text-black">
+    <section id="contact" className="bg-skyMist px-10">
+      <div className="w-full flex flex-col items-center text-deepSlate font-primary font-medium pt-[20px]">
+        <h1 className="text-[30px] font-primary underline underline-offset-4 tracking-wider pb-[20px] text-midnightBlue">
           Contact
         </h1>
         <Button variant="ghost" className="hover:bg-transparent">
           <a
-            className="flex justify-center items-center gap-2 h-5 text-[17px] text-black hover:text-darkGray transition-all ease-in-out duration-300"
+            className="flex justify-center items-center gap-2 h-5 text-[17px] text-midnightBlue hover:text-steelGray transition-all ease-in-out duration-300"
             href="mailto:nu37317@gmail.com"
           >
             <HiOutlineMail className="w-[20px] h-[20px]" />
@@ -54,7 +54,7 @@ export default function Contact() {
               variant="link"
               size="icon"
               key={index}
-              className="text-charcoalGray hover:text-darkGray"
+              className="text-deepSlate hover:text-steelGray"
             >
               <a href={link.link}>
                 <link.icons style={{ width: "40px", height: "40px" }} />

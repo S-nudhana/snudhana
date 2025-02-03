@@ -10,13 +10,13 @@ export default {
   theme: {
   	extend: {
   		colors: {
-			softWhite: 'var(--softWhite)',
-			softBeige: 'var(--softBeige)',
-			lightBeige: 'var(--lightBeige)',
-			beige: 'var(--beige)',
-			darkGray: 'var(--darkGray)',
-			charcoalGray: 'var(--charcoalGray)',
-			black: 'var(--black)',
+			cloudWhite: 'var(--cloudWhite)',
+			pearlGray: 'var(--pearlGray)',
+			skyMist: 'var(--skyMist)',
+			stormBlue: 'var(--stormBlue)',
+			steelGray: 'var(--steelGray)',
+			deepSlate: 'var(--deepSlate)',
+			midnightBlue: 'var(--midnightBlue)',
 			background: 'hsl(var(--background))',
 			foreground: 'hsl(var(--foreground))',
   			card: {

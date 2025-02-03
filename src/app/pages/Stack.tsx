@@ -4,19 +4,13 @@ interface StackItem {
   type: string;
   description: string;
   detail: string[];
-  img?: img[];
-}
-
-interface img {
-  title: string;
-  img: string[];
 }
 
 const stack: StackItem[] = [
   {
     type: "Frontend",
     description:
-      "Both static and dynamic web applications that I have worked with using the following technologies and frameworks. My example projects are built using these technologies 👇.",
+      "Both static and dynamic web applications that I have worked with using the following technologies and frameworks.",
     detail: [
       "Next JS",
       "React JS",
@@ -27,23 +21,19 @@ const stack: StackItem[] = [
       "Daisy UI",
       "Shadcn/UI",
       "Bootstrap",
-    ],
-    img: [
-      {
-        title: "SIT PM : React JS + Chakra UI",
-        img: ["/images/SIT_PM1.png", "/images/SIT_PM2.png"],
-      },
+      "Radix UI",
     ],
   },
   {
     type: "Backend",
     description:
       "Working on the server-side of the web application Ex. RESTful API, Backend service, Database connection and many more. The following technologies and frameworks are the ones that I have worked with.",
-    detail: ["Node.JS", "ExpressJS", "Bun", "Prisma"],
+    detail: ["Node.JS", "ExpressJS", "ElysiaJS","Bun", "Prisma"],
   },
   {
     type: "Database",
-    description: "Capable of working on the Database such as the Database administrator, Database designer and SQL developer. The following technologies and frameworks are the ones that I have worked with.",
+    description:
+      "Capable of working on the Database such as the Database administrator, Database designer and SQL developer. The following technologies and frameworks are the ones that I have worked with.",
     detail: [
       "MySQL",
       "InfluxDB",
@@ -75,34 +65,33 @@ const stack: StackItem[] = [
       "TypeScript",
       "Java",
       "SQL",
-      "Python",
       "Swift",
       "Dart",
     ],
   },
 ];
 
-const filterFrontend: StackItem[] = stack.filter(
-  (item) => item.type === "Frontend"
-);
-const filterBackend: StackItem[] = stack.filter(
-  (item) => item.type === "Backend"
-);
-const filterDatabase: StackItem[] = stack.filter(
-  (item) => item.type === "Database"
-);
-const filterOthers: StackItem[] = stack.filter(
-  (item) => item.type === "Others"
-);
-const filterProgrammingLanguage: StackItem[] = stack.filter(
-  (item) => item.type === "Programming Language"
-);
+export default function Stack(): JSX.Element {
+  const filterFrontend: StackItem[] = stack.filter(
+    (item) => item.type === "Frontend"
+  );
+  const filterBackend: StackItem[] = stack.filter(
+    (item) => item.type === "Backend"
+  );
+  const filterDatabase: StackItem[] = stack.filter(
+    (item) => item.type === "Database"
+  );
+  const filterOthers: StackItem[] = stack.filter(
+    (item) => item.type === "Others"
+  );
+  const filterProgrammingLanguage: StackItem[] = stack.filter(
+    (item) => item.type === "Programming Language"
+  );
 
-export default function Stack() {
   return (
     <section id="stack">
-      <div className="w-full h-100dvh text-charcoalGray font-primary font-normal pt-3 pb-[40px]">
-        <h1 className="text-[30px] underline underline-offset-[10px] tracking-wider flex justify-center text-black">
+      <div className="w-full h-100dvh bg-cloudWhite text-deepSlate font-primary font-normal pt-3 pb-[40px]">
+        <h1 className="text-[30px] md:text-[40px] underline underline-offset-[15px] tracking-wider flex justify-center text-midnightBlue">
           Tech Stack
         </h1>
         <div className="h-[100%] flex flex-col lg:flex-row items-center lg:items-start justify-center gap-4 pt-[30px] px-[25px] width-[90%]">

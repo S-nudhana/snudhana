@@ -2,7 +2,6 @@ import "../style/parallelogramBackground.css";
 import "../style/underlineAnimation.css";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 import ProjectDisplay from "../components/ProjectDisplay";
 
 interface ProjectItem {
@@ -19,7 +18,7 @@ interface ProjectItem {
 const projectItems: ProjectItem[] = [
   {
     type: "website",
-    name: "Certificate SIT KMUTT",
+    name: "SIT KMUTT Certificate",
     link: "",
     linkType: "In progress",
     description:
@@ -29,7 +28,7 @@ const projectItems: ProjectItem[] = [
   },
   {
     type: "website",
-    name: "Pm 2.5 display SIT KMUTT",
+    name: "SIT KMUTT Pm 2.5",
     link: "https://pm25project.sit.kmutt.ac.th/",
     linkType: "Visit website",
     description:
@@ -53,8 +52,7 @@ const projectItems: ProjectItem[] = [
     name: "Snudhana Portfolio",
     link: "https://github.com/S-nudhana/S_nudhana",
     linkType: "Github link",
-    description:
-      "This project is a web application that displays my portfolio as website.",
+    description: "This project is a web application that displays my portfolio as website.",
     frontend: "Next JS + TypeScript + Tailwind CSS + Shadcn/UI",
   },
   {
@@ -67,35 +65,45 @@ const projectItems: ProjectItem[] = [
     frontend: "React JS + MUI",
     backend: "Node.JS + ExpressJS + MySQL",
   },
+  {
+    type: "website",
+    name: "SIT Helloworld workshop",
+    link: "https://github.com/Hello-Hippo-Backend",
+    linkType: "Github link",
+    description:
+      "This project is a web application workshops for SIT helloworld camper to learn about frontend, backend and database development.",
+    frontend: "React JS + Chakra UI",
+    backend: "Node.JS + ExpressJS + MySQL",
+  },
 ];
 
-const filterWebsite: ProjectItem[] = projectItems.filter(
-  (project) => project.type === "website"
-);
+export default function Project(): JSX.Element {
+  const filterWebsite: ProjectItem[] = projectItems.filter(
+    (project) => project.type === "website"
+  );
 
-const filterApplication: ProjectItem[] = projectItems.filter(
-  (project) => project.type === "application"
-);
+  const filterApplication: ProjectItem[] = projectItems.filter(
+    (project) => project.type === "application"
+  );
 
-export default function Project() {
   return (
     <section id="project">
-      <div className="w-full h-100dvh text-charcoalGray font-primary font-normal">
-        <h1 className="text-[30px] underline underline-offset-[10px] tracking-wider flex justify-center mb-[-32px] lg:mb-[-40px] z-10 relative text-black">
+      <div className="w-full h-100dvh text-deepSlate font-primary font-normal mt-14 lg:mt-0">
+        <h1 className="text-[30px] md:text-[40px] underline underline-offset-[15px] tracking-wider flex justify-center mb-[-32px] lg:mb-[-40px] z-10 relative text-midnightBlue">
           Project
         </h1>
-        <div className="parallelogram-black z-0 relative">
-          <Tabs defaultValue="website" className="w-full px-10 lg:px-20 pt-5">
-            <TabsList className="flex justify-center lg:justify-around gap-2 lg:gap-4 bg-transparent">
+        <div className="parallelogram-midnightBlue z-0 relative">
+          <Tabs defaultValue="website" className="w-full px-8 lg:px-20 pt-5">
+            <TabsList className="flex justify-around gap-2 lg:gap-4 bg-transparent">
               <TabsTrigger
                 value="website"
-                className="w-[30%] data-[state=active]:bg-transparent data-[state=active]:shadow-none underline-animation"
+                className="text-[16px] w-[30%] data-[state=active]:bg-transparent data-[state=active]:shadow-none underline-animation"
               >
                 Website
               </TabsTrigger>
               <TabsTrigger
                 value="application"
-                className="w-[30%] data-[state=active]:bg-transparent data-[state=active]:shadow-none underline-animation"
+                className="text-[16px] w-[30%] data-[state=active]:bg-transparent data-[state=active]:shadow-none underline-animation"
               >
                 Application
               </TabsTrigger>
@@ -109,21 +117,13 @@ export default function Project() {
             </TabsContent>
             <TabsContent value="application">
               <div>
-                <div
-                  className={`${
-                    filterApplication.length === 0 ? "hidden" : ""
-                  }`}
-                >
+                <div className={`${filterApplication.length === 0 ? "hidden" : ""}`}>
                   {filterApplication.map((project, index) => (
-                    <ProjectDisplay
-                      key={index}
-                      index={index}
-                      project={project}
-                    />
+                    <ProjectDisplay key={index} index={index} project={project} />
                   ))}
                 </div>
                 <div
-                  className={`${
+                  className={`$ {
                     filterApplication.length === 0
                       ? "flex justify-center items-center h-[300px] text-[18px]"
                       : "hidden"

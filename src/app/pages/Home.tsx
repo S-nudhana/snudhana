@@ -3,22 +3,18 @@ import IMG from "../../../public/images/Home_BG.jpg";
 import { motion } from "framer-motion";
 import { fadeUpVariants } from "../utils/motion/fadeUp";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
-    <div className="relative w-full h-screen text-charcoalGray font-primary font-normal mb-3 flex justify-center items-center">
+    <div className="relative w-full h-screen text-deepSlate font-primary font-normal mb-3 flex justify-center items-center">
       <div className="absolute flex flex-col items-center justify-center pt-10 gap-3">
-        <motion.img
-          src={IMG.src}
-          alt="Home Background"
-          className="h-[400px] w-[auto] object-contain shadow-md rounded-lg"
-        />
         <motion.div
           className="w-full flex flex-col items-center justify-center pt-5 gap-3"
           initial="hidden"
           animate="visible"
           variants={fadeUpVariants}
         >
-          <h1 className="text-[30px] underline underline-offset-[10px] tracking-wider text-black">
+          <img src={IMG.src} alt="Home Background" className="h-[50dvh] w-[auto] object-contain shadow-md rounded-lg"/>
+          <h1 className="text-[30px] underline underline-offset-[10px] tracking-wider text-midnightBlue">
             Who am I?
           </h1>
           <motion.div
@@ -40,10 +36,10 @@ export default function Home() {
             variants={fadeUpVariants}
             transition={{ delay: 0.5 }}
           >
-            <Button className="rounded-full w-[100px] bg-charcoalGray hover:bg-black transition duration-300 ease-in-out">
+            <Button className="rounded-full w-[100px] bg-deepSlate hover:bg-midnightBlue transition duration-300 ease-in-out">
               CV
             </Button>
-            <Button className="rounded-full w-[100px] bg-charcoalGray hover:bg-black transition duration-300 ease-in-out">
+            <Button className="rounded-full w-[100px] bg-deepSlate hover:bg-midnightBlue transition duration-300 ease-in-out">
               Resume
             </Button>
           </motion.div>

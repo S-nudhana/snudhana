@@ -1,14 +1,14 @@
-.parallelogram-black {
+.parallelogram-midnightBlue {
   --p: 35px;
   position: relative;
   padding: 40px 0 60px 0;
   clip-path: polygon(0 var(--p), 0 100%, 100% calc(102% - var(--p)), 100% 0);
-  background: #FFFCF7;
+  background: #dee7f0;
   overflow: hidden;
 }
 
 @media (min-width: 1024px) {
-  .parallelogram-black {
+  .parallelogram-midnightBlue {
     --p: 50px;
     padding: 60px 0 60px 0;
   }
