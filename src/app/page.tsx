@@ -1,25 +1,30 @@
 "use client";
 
-import Home from "./pages/Home";
-import Project from "./pages/Project";
-import Stack from "./pages/Stack";
-import Teaching from "./pages/Teaching";
-import Working from "./pages/Working";
-import Contact from "./pages/Contact";
+import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import About from "@/components/section/About";
+import Projects from "@/components/section/Projects";
+import Stack from "@/components/section/Stack";
+import Contact from "@/components/section/Contact";
 
 export default function page() {
   return (
-    <>
-      <Home />
-      <div className="bg-cloudWhite">
-        <div>
-          <Project />
-          <Stack />
-          <Teaching />
-          <Working />
-          <Contact />
+    <div className="font-primary">
+      <Navbar />
+      <div className="mt-[100px] flex justify-center">
+        <div className="flex flex-col md:flex-row gap-6 w-[80%] lg:w-[75%]">
+          <Sidebar />
+          <div className="md:ml-[260px] text-lightGray flex flex-col gap-7 w-full">
+            <About />
+            <Projects />
+            <Stack />
+            <Contact />
+          </div>
         </div>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 }
+
