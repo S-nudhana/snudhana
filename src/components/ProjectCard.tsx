@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import Link from "next/link";
 import {
   Card,
@@ -15,7 +15,7 @@ interface ProjectProps {
     id: number;
     title: string;
     description: string;
-    image: StaticImageData;
+    cover: StaticImageData;
     subImage?: StaticImageData[];
     type: string;
     frontend?: string;
@@ -30,7 +30,7 @@ export default function ProjectCard({ projectData }: ProjectProps) {
     <Card className="w-full lg:w-[50%] xl:w-[31%] bg-transparent border-none shadow-none">
       <CardHeader className="px-0">
         <img
-          src={projectData.image.src}
+          src={projectData.cover.src}
           alt="Project Image"
           className="h-auto w-full md:w-[auto] object-cover rounded-lg"
         />

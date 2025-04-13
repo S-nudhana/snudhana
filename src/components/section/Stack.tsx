@@ -39,6 +39,7 @@ const stack: StackItem[] = [
     { name: 'GitLab', category: 'tools' },
     { name: 'Docker', category: 'tools' },
     { name: 'Vercel', category: 'tools' },
+    { name: 'Firebase', category: 'tools' },
 ];
 
 

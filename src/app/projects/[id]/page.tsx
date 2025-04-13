@@ -1,9 +1,10 @@
 'use client';
 
-import { use } from 'react';
+import { use, useState, useEffect } from 'react';
 import { StaticImageData } from "next/image";
 import Link from "next/link";
 import { IoLinkOutline } from "react-icons/io5";
+import { type CarouselApi } from "@/components/ui/carousel"
 
 import BackBTN from "@/components/BackBTN";
 import { projectList } from '@/components/section/Projects';
@@ -22,7 +23,7 @@ interface Project {
   title: string;
   description: string;
   status: string;
-  image: StaticImageData;
+  cover: StaticImageData;
   subImage?: StaticImageData[];
   role: string;
   type: string;
@@ -35,7 +36,22 @@ interface Project {
 export default function ProjectPage({ params }: { params: Promise<{ id: number }> }) {
   const id = Number(use(params).id);
   const projects: Project[] = projectList.filter((project) => project.id === id);
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(0)
+  const [count, setCount] = useState(0)
 
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    setCount(api.scrollSnapList().length)
+    setCurrent(api.selectedScrollSnap() + 1)
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1)
+    })
+  }, [api])
   return (
     <>
       <div className="md:ml-[260px] text-lightGray flex flex-col lg:justify-start gap-3 lg:gap-7 w-full">
@@ -58,7 +74,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: number }
             )}
           </div>
           <Separator className='my-[20px] bg-neutral-700' />
-          <Carousel className='w-[85%] lg:ml-[50px] mt-[40px]'>
+          <Carousel className='w-[100%] md:w-[85%] lg:ml-[50px] mt-[20px]' setApi={setApi}>
             <CarouselContent>
               {projects[0].subImage?.map((image: StaticImageData, index: number) => (
                 <CarouselItem key={index} className="w-full h-auto rounded-xl">
@@ -66,8 +82,11 @@ export default function ProjectPage({ params }: { params: Promise<{ id: number }
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className='bg-gray border-gray hover:bg-white hover:border-white text-black duration-200' />
-            <CarouselNext className='bg-gray border-gray hover:bg-white hover:border-white text-black duration-200' />
+            <CarouselPrevious className='hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200' />
+            <CarouselNext className='hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200' />
+            <div className="mt-[20px] text-center text-[14px] text-muted-foreground">
+              Slide {current} of {count}
+            </div>
           </Carousel>
           <div className='text-gray mt-[30px] mb-[20px]'>
             <h1 className='text-white text-[18px] mt-[10px] mb-[5px]'>Description</h1>
@@ -76,12 +95,12 @@ export default function ProjectPage({ params }: { params: Promise<{ id: number }
             <h2>{projects[0].role}</h2>
             {
               (projects[0].frontend || projects[0].backend || projects[0].database) && (
-                <>
+                <div>
                   <h1 className='text-white text-[18px] mt-[30px] mb-[5px]'>Tech Stack</h1>
                   {projects[0].frontend && <h2>Frontend: {projects[0].frontend}</h2>}
                   {projects[0].backend && <h2>Backend: {projects[0].backend}</h2>}
                   {projects[0].database && <h2>Database: {projects[0].database}</h2>}
-                </>
+                </div>
               )
             }
           </div>
