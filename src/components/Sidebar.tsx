@@ -1,4 +1,3 @@
-"use client";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "./ui/button";

@@ -27,7 +27,7 @@ interface ProjectProps {
 
 export default function ProjectCard({ projectData }: ProjectProps) {
   return (
-    <Card className="w-full lg:w-[50%] xl:w-[31%] bg-transparent border-none shadow-none">
+    <Card className="w-full lg:w-[47%] xl:w-[31%] bg-transparent border-none shadow-none">
       <CardHeader className="px-0">
         <img
           src={projectData.cover.src}

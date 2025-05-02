@@ -1,9 +1,9 @@
-interface StackItem {
+interface Stack {
     name: string;
     category: string;
 }
 
-const stack: StackItem[] = [
+const stackList: Stack[] = [
     { name: 'React JS', category: 'frontend' },
     { name: 'Next.js', category: 'frontend' },
     { name: 'bun', category: 'backend' },
@@ -30,7 +30,6 @@ const stack: StackItem[] = [
     { name: 'Prisma', category: 'database' },
     { name: 'SQL', category: 'language' },
     { name: 'hono' , category: 'backend' },
-    { name: 'ExpressJS', category: 'backend' },
     { name: 'svelte', category: 'frontend' },
     { name: 'dart', category: 'language' },
     { name: 'Figma', category: 'design' },
@@ -40,11 +39,14 @@ const stack: StackItem[] = [
     { name: 'Docker', category: 'tools' },
     { name: 'Vercel', category: 'tools' },
     { name: 'Firebase', category: 'tools' },
+    { name: 'nginx', category: 'tools' },
+    { name: 'Postman', category: 'tools' },
+    { name: 'flutter', category: 'frontend' },
 ];
 
 
 export default function Stack() {
-    const categorizedStack = stack.reduce<Record<string, StackItem[]>>((acc, item) => {
+    const categorizedStack = stackList.reduce<Record<string, Stack[]>>((acc, item) => {
         acc[item.category] = acc[item.category] || [];
         acc[item.category].push(item);
         return acc;

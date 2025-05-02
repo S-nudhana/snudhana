@@ -1,3 +1,5 @@
+"use client";
+
 import Img from "../../../public/images/ProfilePicture.jpg"
 import BackBTN from "@/components/BackBTN";
 

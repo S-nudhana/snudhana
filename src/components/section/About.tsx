@@ -16,7 +16,7 @@ export default function About() {
             <h1 className="text-yellow text-[20px] font-[600]">About</h1>
             <div className="text-gray flex flex-col gap-2 md:gap-0">
                 <h2 className="mt-[10px]">Computer Science International program student at King Monkut's University of Technology Thonburi.</h2>
-                <h2>I'm interesting in minimal Web Development, Database Design and Networking.</h2>
+                <h2>I'm interesting in minimal Web Development, Database Design and Database Developemnt.</h2>
                 <h2 className='mt-[10px]'>Based in Bangkok, Thailand.</h2>
             </div>
             <Link href="/resume">

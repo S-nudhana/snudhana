@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
+import { TbMenu3 } from "react-icons/tb";
 import {
   Sheet,
   SheetContent,
@@ -71,7 +71,7 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [lastScrollY]);
 
   const handleTabClick = (): void => {
     setIsSheetOpen(false);
@@ -89,29 +89,8 @@ export default function Navbar() {
         open={isSheetOpen}
         onOpenChange={(open: boolean) => setIsSheetOpen(open)}
       >
-        <SheetTrigger asChild>
-          <Button variant="ghost" className={`hover:bg-transparent lg:hidden`}>
-            <motion.div
-              className="hamburger-icon"
-              initial={false}
-              animate={{
-                rotate: isSheetOpen ? 45 : 0,
-              }}
-            >
-              <div
-                className={`w-6 h-[3px] bg-white transition-transform duration-300 ease-in-out mb-[5px] ${isSheetOpen ? "rotate-45 opacity-0" : ""
-                  }`}
-              />
-              <div
-                className={`w-4 h-[3px] bg-white transition-opacity duration-300 ease-in-out mb-[5px] ${isSheetOpen ? "rotate-45 opacity-0" : ""
-                  }`}
-              />
-              <div
-                className={`w-6 h-[3px] bg-white transition-transform duration-300 ease-in-out ${isSheetOpen ? "rotate-45 opacity-0" : ""
-                  }`}
-              />
-            </motion.div>
-          </Button>
+        <SheetTrigger>
+          <TbMenu3 className="text-white text-[30px]"/>
         </SheetTrigger>
         <SheetContent side="right" className="w-full bg-black border-none">
           <SheetClose />
