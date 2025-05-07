@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
-import { ReactLenis } from "lenis/react";
+import LenisProvider from "@/components/LenisProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lato.variable}`}>
       <body>
-        <ReactLenis root>{children}</ReactLenis>
+        <LenisProvider>
+          {children}
+        </LenisProvider>
       </body>
     </html>
   );

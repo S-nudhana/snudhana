@@ -30,6 +30,7 @@ interface Project {
   frontend?: string;
   backend?: string;
   database?: string;
+  api?: string;
   link?: string;
   deploy?: string;
   features?: string[];
@@ -100,13 +101,15 @@ export default function ProjectPage({
                   (image: StaticImageData, index: number) => (
                     <CarouselItem
                       key={index}
-                      className="w-full h-auto rounded-xl"
+                      className="w-full h-auto rounded-xl flex justify-center"
                     >
-                      <img
-                        src={image.src}
-                        alt={projects[0].title}
-                        className="object-cover w-full h-auto rounded-xl"
-                      />
+                      <div className={`overflow-hidden rounded-xl ${projects[0].type === "Website" || projects[0].type === "UX/UI" ? "" : "max-w-[300px]"}`}>
+                        <img
+                          src={image.src}
+                          alt={projects[0].title}
+                          className="object-cover w-full h-auto"
+                        />
+                      </div>
                     </CarouselItem>
                   )
                 )}
@@ -126,9 +129,8 @@ export default function ProjectPage({
             <h1 className="text-white text-[18px] mt-[30px] mb-[5px]">Role</h1>
             <h2>{projects[0].role}</h2>
             <h1
-              className={`text-white text-[18px] mt-[30px] mb-[5px] ${
-                projects[0].features ? "block" : "hidden"
-              }`}
+              className={`text-white text-[18px] mt-[30px] mb-[5px] ${projects[0].features ? "block" : "hidden"
+                }`}
             >
               Features
             </h1>
@@ -140,22 +142,23 @@ export default function ProjectPage({
             {(projects[0].frontend ||
               projects[0].backend ||
               projects[0].database) && (
-              <div>
-                <h1 className="text-white text-[18px] mt-[30px] mb-[5px]">
-                  Tech Stack
-                </h1>
-                {projects[0].frontend && (
-                  <h2>- Frontend: {projects[0].frontend}</h2>
-                )}
-                {projects[0].backend && <h2>- Backend: {projects[0].backend}</h2>}
-                {projects[0].database && (
-                  <h2>- Database: {projects[0].database}</h2>
-                )}
-                {projects[0].deploy && (
-                  <h2>- Deployment: {projects[0].deploy}</h2>
-                )}
-              </div>
-            )}
+                <div>
+                  <h1 className="text-white text-[18px] mt-[30px] mb-[5px]">
+                    Tech Stack
+                  </h1>
+                  {projects[0].frontend && (
+                    <h2>- Frontend: {projects[0].frontend}</h2>
+                  )}
+                  {projects[0].backend && <h2>- Backend: {projects[0].backend}</h2>}
+                  {projects[0].database && (
+                    <h2>- Database: {projects[0].database}</h2>
+                  )}
+                  {projects[0].api && <h2>API: {projects[0].api}</h2>}
+                  {projects[0].deploy && (
+                    <h2>- Deployment: {projects[0].deploy}</h2>
+                  )}
+                </div>
+              )}
           </div>
         </div>
       </div>

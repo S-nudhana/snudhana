@@ -1,3 +1,5 @@
+import { useDispatch, useSelector } from "react-redux";
+import { store, type RootState } from '@/lib/store';
 import { useState, useEffect } from "react";
 import { StaticImageData } from "next/image";
 import {
@@ -37,6 +39,15 @@ import HW_Cover from "../../../public/images/HelloWorld/HW_Cover.png";
 import HW1 from "../../../public/images/HelloWorld/HW1.png";
 import HW2 from "../../../public/images/HelloWorld/HW2.png";
 
+import Re2 from "../../../public/images/ReDine/Re2.png";
+import Re3 from "../../../public/images/ReDine/Re3.png";
+import Re4 from "../../../public/images/ReDine/Re4.png";
+import Re5 from "../../../public/images/ReDine/Re5.png";
+import Re6 from "../../../public/images/ReDine/Re6.png";
+import Re7 from "../../../public/images/ReDine/Re7.png";
+import Re8 from "../../../public/images/ReDine/Re8.png";
+import { setData } from "@/lib/dataSlice";
+
 interface Project {
   id: number;
   title: string;
@@ -50,8 +61,9 @@ interface Project {
   frontend?: string;
   backend?: string;
   database?: string;
-  deploy?: string;
+  api?: string;
   link?: string;
+  deploy?: string;
 }
 
 export const projectList: Project[] = [
@@ -178,9 +190,13 @@ export const projectList: Project[] = [
     id: 5,
     title: "Digital Product Development",
     description:
-      "Static website for participants in Digital Product Development class construct by SIT KMUTT and Adirek.co to display the schedule of the class.",
+      "Static time table website for participants in Digital Product Development class, collaboration between SIT KMUTT and Adirek.co to display course schedule of the class.",
+    features: [
+      "Static Time Table",
+      "Time Line Display Style",
+    ],
     type: "Website",
-    status: "website",
+    status: "github",
     role: "Frotnend Developer + UI/UX Designer",
     cover: DPM_Cover,
     subImage: [DPM1, DPM2],
@@ -188,53 +204,78 @@ export const projectList: Project[] = [
     link: "",
     deploy: "Docker + Linux Ubuntu VM + nginx",
   },
-  // {
-  //   id: 5,
-  //   title: "Odyssey Traveling",
-  //   description:
-  //     "Web application made in 36 hour hackathon when I'm a first year student that allows users to find travel information inside Thailand with clever suggestion and recommendation system by using longitude, latitude and user preferences for being part of recommendation features and allow register user favorite their places.",
-  //   features: [
-  //     "Favorite Place",
-  //     "Place Recommendation by User Preference and Latitude, Longitude Calculation",
-  //     "Place Search",
-  //     "Place Filter",
-  //     "User Preference",
-  //     "Place Information",
-  //   ],
-  //   type: "Website",
-  //   status: "github",
-  //   role: "Full Stack Developer + UI/UX Designer + Database Designer",
-  //   cover: image,
-  //   frontend: "React JS + MUI",
-  //   backend: "Node.JS + ExpressJS",
-  //   database: "MySQL",
-  //   link: "https://github.com/S-nudhana/Odyssey-Traveling",
-  // },
   {
-    id: 6,
-    title: "Redine",
+    id: 8,
+    title: "VacciTrack",
     description:
-      "Web application made in 36 hour hackathon that allows users to find travel information inside Thailand with clever suggestion and recommendation system by using longitude, latitude and user preferences for being part of recommendation features.",
-    type: "Mobile Application",
-    status: "inProgress",
-    role: "Full Stack Developer + UI/UX Designer",
+      "A Flutter application designed to track the vaccination status of users and their family members. It allows users to set reminders for upcoming vaccinations, add family members, and receive vaccination recommendations based on age.",
+    features: [
+      "Family Member Management",
+      "Vaccine History Logging",
+      "Vaccine Appointment Management",
+      "Vaccine Notification Reminder",
+      "Age Based Vaccination Recommendation",
+    ],
+    type: "Application",
+    status: "github",
+    role: "Full Stack Developer + UI/UX Designer + Database Designer",
     cover: image,
     frontend: "Flutter + Flutter Material",
-    backend: "Bun + Hono + Typescript",
-    database: "firebase",
-    link: "",
+    backend: "Bun + Hono",
+    database: "Firebase",
+    link: "https://github.com/S-nudhana/Odyssey-Traveling",
+  },
+  {
+    id: 6,
+    title: "ReDine",
+    description:
+      "A Flutter app that reduces food waste by suggesting personalized recipes using TheMealDB and my custom algorithm. It tracks fridge inventory, alerts expiry dates, and recommends meals based on available ingredients to help users cook smarter and waste less.",
+    features: [
+      "Personalized Recipe Suggestions",
+      "Category Meal Suggestions",
+      "Searching Meal by Ingredients",
+      "Custom Searching Algorithm + Menu Display Algorithm",
+      "Searching filter by Allergy, Avoidance, Category and Nationality",
+      "Auto Complete Input",
+      "Step by Step Cooking Method + Youtube Video",
+      "Menu Description",
+      "Ingredient + Measurement",
+      "User Allergy Memorize",
+      "User Login + Register",
+    ],
+    type: "Application",
+    status: "github",
+    role: "Full Stack Developer + UI/UX Designer",
+    cover: image,
+    subImage: [
+      Re2,
+      Re3,
+      Re4,
+      Re5,
+      Re6,
+      Re7,
+      Re8,
+    ],
+    frontend: "Flutter + Flutter Material",
+    backend: "Bun + Hono",
+    database: "Firebase",
+    link: "https://github.com/orgs/ReDine-Flutter-Project-G4/repositories",
   },
 ];
 
 export default function Projects() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedType, setSelectedType] = useState<string>("all");
+  const dispatch = useDispatch();
+  const storeData = useSelector((state: RootState) => state.counter);
+  const [isOpen, setIsOpen] = useState<boolean>(storeData.IsOpen);
+  const [selectedType, setSelectedType] = useState<string>(storeData.SelectedType);
+  const [category, setCategory] = useState<string>(storeData.Category);
   const categorizedType = Array.from(
     new Set(projectList.map((project: Project) => project.type))
   );
 
   const handleTypeChange = (value: string) => {
     setSelectedType(value);
+    setCategory(value.substring(0, 1).toUpperCase() + value.substring(1));
   };
   const [isIpad, setIsIpad] = useState(false);
 
@@ -249,13 +290,17 @@ export default function Projects() {
     return () => window.removeEventListener("resize", checkSize);
   }, []);
 
+  useEffect(() => {
+    dispatch(setData({ IsOpen: isOpen, SelectedType: selectedType, Category: category }));
+  }, [isOpen, selectedType, category]);
+
   return (
     <section id="project">
       <div className="flex items-center justify-between align-middle mt-[20px]">
         <h1 className="text-yellow text-[20px] font-[600]">Projects</h1>
         <Select onValueChange={handleTypeChange}>
           <SelectTrigger className="w-[150px] lg:w-[200px] text-gray border-neutral-700 hover:border-neutral-600 duration-300 ease-in-out">
-            <SelectValue placeholder="Filter" />
+            <SelectValue placeholder={category} />
           </SelectTrigger>
           <SelectContent className="bg-[#201f1f] text-white border-none">
             <SelectItem
@@ -302,19 +347,32 @@ export default function Projects() {
           })()}
         </div>
         <CollapsibleContent>
-          <div className="flex flex-wrap justify-center md:justify-between gap-x-2 mt-4">
-            {projectList
+          <div className="flex flex-wrap justify-center md:justify-between gap-x-2">
+          {(() => {
+            const filtered = projectList
               .filter(
                 (project) =>
                   project.type === selectedType || selectedType === "all"
               )
-              .slice(isIpad ? 4 : 3)
-              .map((project, index) => (
-                <ProjectCard key={index} projectData={project} />
-              ))}
+              .slice(isIpad ? 4 : 3);
+            const placeholders = filtered.length % 3;
+            return (
+              <>
+                {filtered.map((project, index) => (
+                  <ProjectCard key={index} projectData={project} />
+                ))}
+                {Array.from({ length: placeholders }).map((_, index) => (
+                  <div
+                    key={`placeholder-${index}`}
+                    className="w-[30%] invisible"
+                  />
+                ))}
+              </>
+            );
+          })()}
           </div>
         </CollapsibleContent>
-        <CollapsibleTrigger asChild>
+        <CollapsibleTrigger asChild className={`${projectList.filter((project) => project.type === selectedType || selectedType === "all").length <= 3 ? 'hidden' : ''}`}>
           <button className="mt-6 flex items-center gap-2 mx-auto text-gray hover:text-white transition duration-300">
             {isOpen ? (
               <>
