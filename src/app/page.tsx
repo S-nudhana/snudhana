@@ -8,22 +8,27 @@ import Projects from "@/components/section/Projects";
 import Stack from "@/components/section/Stack";
 import Contact from "@/components/section/Contact";
 
+import { Provider } from 'react-redux';
+import { store } from '@/lib/store';
+
 export default function page() {
   return (
-    <div className="font-primary">
-      <Navbar />
-      <div className="mt-[100px] flex justify-center">
-        <div className="flex flex-col md:flex-row gap-6 w-[80%] lg:w-[75%]">
-          <Sidebar />
-          <div className="md:ml-[260px] text-lightGray flex flex-col gap-7 w-full">
-            <About />
-            <Projects />
-            <Stack />
-            <Contact />
+    <Provider store={store}>
+      <div className="font-primary">
+        <Navbar />
+        <div className="mt-[100px] flex justify-center">
+          <div className="flex flex-col md:flex-row gap-6 w-[80%] lg:w-[75%]">
+            <Sidebar />
+            <div className="md:ml-[260px] text-gray flex flex-col gap-7 w-full">
+              <About />
+              <Projects />
+              <Stack />
+              <Contact />
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Provider>
   );
 }

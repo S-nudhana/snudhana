@@ -27,7 +27,7 @@ const stackList: Stack[] = [
     { name: 'daisyUI', category: 'styling' },
     { name: 'mariaDB', category: 'database' },
     { name: 'Radix UI', category: 'styling' },
-    { name: 'Prisma', category: 'database' },
+    { name: 'Prisma ORM', category: 'database' },
     { name: 'SQL', category: 'language' },
     { name: 'hono' , category: 'backend' },
     { name: 'svelte', category: 'frontend' },
@@ -41,7 +41,7 @@ const stackList: Stack[] = [
     { name: 'Firebase', category: 'tools' },
     { name: 'nginx', category: 'tools' },
     { name: 'Postman', category: 'tools' },
-    { name: 'flutter', category: 'frontend' },
+    { name: 'Flutter', category: 'frontend' },
 ];
 
 
