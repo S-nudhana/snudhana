@@ -124,7 +124,7 @@ export default function Page() {
                   landscape.
                 </h2>
                 <div className="flex items-center align-middle gap-2 mt-[10px]">
-                  <LuMapPin className="text-[16px]"/>
+                  <LuMapPin className="text-[16px]" />
                   <h2 className="mt-[10px]">Based in Bangkok, Thailand.</h2>
                 </div>
               </div>
@@ -229,16 +229,15 @@ export default function Page() {
                 </CollapsibleContent>
                 <CollapsibleTrigger
                   asChild
-                  className={`${
-                    projectList.filter(
-                      (project) =>
-                        project.type === selectedType || selectedType === "all"
-                    ).length <= 3
-                      ? "hidden"
-                      : ""
-                  }`}
+                  className={`${projectList.filter(
+                    (project) =>
+                      project.type === selectedType || selectedType === "all"
+                  ).length <= 3
+                    ? "hidden"
+                    : ""
+                    }`}
                 >
-                  <button className="mt-6 flex items-center gap-2 mx-auto text-gray hover:text-white transition duration-300">
+                  <button className="mt-1 flex items-center gap-2 mx-auto text-gray hover:text-white transition duration-300">
                     {isOpen ? (
                       <>
                         <FaAngleUp />
