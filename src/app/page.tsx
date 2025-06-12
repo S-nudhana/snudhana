@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { LuMapPin } from "react-icons/lu";
 import { FaAngleDown, FaAngleUp, FaGithub, FaLinkedin } from "react-icons/fa";
-import { IoDocumentText } from "react-icons/io5";
 
 import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
@@ -26,7 +25,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { store, type RootState } from "@/store/store";
+import type { RootState } from "@/store/store";
 import { setData } from "@/store/reduxSlices/dataSlice";
 import { projectList } from "@/data/projectList";
 import { stackList } from "@/data/stackList";
@@ -113,9 +112,9 @@ export default function Page() {
               <div className="text-gray flex flex-col gap-2 md:gap-0">
                 <h2 className="mt-[10px]">
                   Computer Science International Program student at King
-                  Mongkut's University of Technology Thonburi, driven by a
+                  Mongkut&#39;s University of Technology Thonburi, driven by a
                   strong passion for creating clean, efficient, and user-focused
-                  digital experiences. I'm particularly interested in minimalist
+                  digital experiences. I&#39;m particularly interested in minimalist
                   web development, where design meets functionality, and in
                   database design and development, where structure and
                   optimization play key roles in building scalable systems.

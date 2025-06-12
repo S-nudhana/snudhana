@@ -23,7 +23,7 @@ const menu: MenuItem[] = [
     href: "#",
     path: "/#",
   },
-    {
+  {
     id: "expertise",
     title: "Expertise",
     href: "#expertise",
@@ -114,8 +114,8 @@ export default function Navbar() {
                       asChild
                       variant="ghost"
                       className="font-primary font-medium text-gray w-full hover:bg-transparent text-[20px] hover:text-gray justify-start p-0"
-                      onClick={() => {
-                        handleClick;
+                      onClick={(e) => {
+                        handleClick(e);
                         handleTabClick();
                       }}
                     >
