@@ -1,14 +1,11 @@
 import { Spiral as Hamburger } from 'hamburger-react';
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { Separator } from "@/components/ui/separator";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
-  SheetClose,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
