@@ -1,8 +1,6 @@
 'use client'
 
-// import type { Metadata } from "next";
 import { Lato } from "next/font/google";
-import Head from 'next/head'
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
 import { Provider } from "react-redux";
@@ -13,7 +11,6 @@ const lato = Lato({
   weight: ["100", "300", "400", "700", "900"],
   variable: "--font-primary",
 });
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,10 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${lato.variable}`}>
-      <Head>
-        <link rel="icon" href="../../public/images/Sn.png" />
+      <head>
+        <link rel="icon" href="/images/Sn.png" />
         <title>s-nudhana</title>
-      </Head>
+      </head>
       <body>
         <LenisProvider>
           <Provider store={store}>{children}</Provider>
@@ -33,3 +30,4 @@ export default function RootLayout({
     </html>
   );
 }
+
