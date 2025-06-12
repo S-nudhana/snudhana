@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" className={`${lato.variable}`}>
       <head>
         <link rel="icon" href="/images/Sn.png" />
-        <title>s-nudhana</title>
+        <title>snudhana</title>
       </head>
       <body>
         <LenisProvider>

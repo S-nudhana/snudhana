@@ -12,10 +12,6 @@ export default function RootLayout({
 }>) {
     return (
         <>
-            <Head>
-                <link rel="icon" href="../../public/images/Sn.png" />
-                <title>s-nudhana | project</title>
-            </Head>
             <div className="font-primary">
                 <Navbar />
                 <div className="mt-[80px] lg:mt-[100px] flex justify-center">
