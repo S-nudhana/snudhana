@@ -2,6 +2,7 @@
 
 // import type { Metadata } from "next";
 import { Lato } from "next/font/google";
+import Head from 'next/head'
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
 import { Provider } from "react-redux";
@@ -26,6 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${lato.variable}`}>
+      <Head>
+        <link rel="icon" href="../../public/images/Sn.png" />
+        <title>s-nudhana</title>
+      </Head>
       <body>
         <LenisProvider>
           <Provider store={store}>{children}</Provider>
