@@ -10,6 +10,7 @@ import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
+import ExpertiseCard from "@/components/ExpertiseCard";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -132,20 +133,9 @@ export default function Page() {
               <h1 className="text-yellow text-[20px] font-[600] mb-[20px]">
                 Expertise
               </h1>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
                 {skillList.map((skill: Skill, index: number) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-center align-middle p-[22px] gap-7 text-gray border-[1px] border-neutral-700 rounded-2xl hover:border-neutral-500 transition duration-300 ease-in-out"
-                  >
-                    <div className="text-yellow text-[40px]">{skill.icon}</div>
-                    <div className="flex flex-col">
-                      <h2 className="text-white font-semibold">
-                        {skill.title}
-                      </h2>
-                      <p className="text-gray">{skill.description}</p>
-                    </div>
-                  </div>
+                  <ExpertiseCard key={index} skill={skill}></ExpertiseCard>
                 ))}
               </div>
             </section>
