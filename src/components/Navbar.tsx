@@ -26,6 +26,12 @@ const menu: MenuItem[] = [
     href: "#",
     path: "/#",
   },
+    {
+    id: "expertise",
+    title: "Expertise",
+    href: "#expertise",
+    path: "/#expertise",
+  },
   {
     id: "projects",
     title: "Projects",

@@ -1,16 +1,13 @@
-interface Stack {
-    name: string;
-    category: string;
-}
+import type { Stack } from "@/types/stack";
 
-const stackList: Stack[] = [
+export const stackList: Stack[] = [
     { name: 'React JS', category: 'frontend' },
     { name: 'Next.js', category: 'frontend' },
     { name: 'bun', category: 'backend' },
     { name: 'deno', category: 'backend' },
     { name: 'Node.js', category: 'backend' },
     { name: 'Express.js', category: 'backend' },
-    { name: 'Go', category: 'backend' },
+    { name: 'Gin', category: 'backend' },
     { name: 'MySQL', category: 'database' },
     { name: 'PostgreSQL', category: 'database' },
     { name: 'IBM DB2', category: 'database' },
@@ -23,7 +20,7 @@ const stackList: Stack[] = [
     { name: 'TypeScript', category: 'language' },
     { name: 'JavaScript', category: 'language' },
     { name: 'Java', category: 'language' },
-    { name: 'Golang', category: 'language' },
+    { name: 'Go', category: 'language' },
     { name: 'daisyUI', category: 'styling' },
     { name: 'mariaDB', category: 'database' },
     { name: 'Radix UI', category: 'styling' },
@@ -31,7 +28,7 @@ const stackList: Stack[] = [
     { name: 'SQL', category: 'language' },
     { name: 'hono' , category: 'backend' },
     { name: 'svelte', category: 'frontend' },
-    { name: 'dart', category: 'language' },
+    { name: 'Dart', category: 'language' },
     { name: 'Figma', category: 'design' },
     { name: 'Canva', category: 'design' },
     { name: 'GitHub', category: 'tools' },
@@ -42,33 +39,6 @@ const stackList: Stack[] = [
     { name: 'nginx', category: 'tools' },
     { name: 'Postman', category: 'tools' },
     { name: 'Flutter', category: 'frontend' },
+    { name: 'Linux Ubuntu', category: 'tools' },
+    { name: 'Bash', category: 'language' },
 ];
-
-
-export default function Stack() {
-    const categorizedStack = stackList.reduce<Record<string, Stack[]>>((acc, item) => {
-        acc[item.category] = acc[item.category] || [];
-        acc[item.category].push(item);
-        return acc;
-    }, {});
-
-    return (
-        <section id="stack">
-            <h1 className="text-yellow text-[20px] font-semibold">Development Stack</h1>
-            <div>
-                {Object.entries(categorizedStack).map(([category, items]) => (
-                    <div key={category} className="mt-4">
-                        <h2 className="text-white capitalize">{category}</h2>
-                        <div className="flex flex-wrap gap-2">
-                            {items.map((item) => (
-                                <span key={item.name} className="text-gray bg-gray-900 p-1 rounded-md">
-                                    {item.name}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
-}

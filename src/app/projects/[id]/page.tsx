@@ -7,7 +7,7 @@ import { IoLinkOutline } from "react-icons/io5";
 import { type CarouselApi } from "@/components/ui/carousel";
 
 import BackBTN from "@/components/BackBTN";
-import { projectList } from "@/components/section/Projects";
+import { projectList } from "@/data/projectList";
 import {
   Carousel,
   CarouselContent,
@@ -17,24 +17,7 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  status: string;
-  cover: StaticImageData;
-  subImage?: StaticImageData[];
-  role: string;
-  type: string;
-  frontend?: string;
-  backend?: string;
-  database?: string;
-  api?: string;
-  link?: string;
-  deploy?: string;
-  features?: string[];
-}
+import type { Project } from "@/types/project";
 
 export default function ProjectPage({
   params,
@@ -92,34 +75,33 @@ export default function ProjectPage({
           </div>
           <Separator className="my-[20px] bg-neutral-700" />
           <div className="w-full flex justify-center items-center">
-            <Carousel
-              className="w-[100%] md:w-[85%] mt-[20px]"
-              setApi={setApi}
-            >
-              <CarouselContent>
-                {projects[0].subImage?.map(
-                  (image: StaticImageData, index: number) => (
-                    <CarouselItem
-                      key={index}
-                      className="w-full h-auto rounded-xl flex justify-center"
-                    >
-                      <div className={`overflow-hidden rounded-xl ${projects[0].type === "Website" || projects[0].type === "UX/UI" ? "" : "max-w-[300px]"}`}>
-                        <img
-                          src={image.src}
-                          alt={projects[0].title}
-                          className="object-cover w-full h-auto"
-                        />
-                      </div>
-                    </CarouselItem>
-                  )
-                )}
-              </CarouselContent>
-              <CarouselPrevious className="hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200" />
-              <CarouselNext className="hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200" />
-              <div className="mt-[20px] text-center text-[14px] text-muted-foreground">
-                {current} of {count}
-              </div>
-            </Carousel>
+            {projects[0].subImage &&
+              <Carousel className="w-[100%] md:w-[85%] mt-[20px]" setApi={setApi}>
+                <CarouselContent>
+                  {projects[0].subImage?.map(
+                    (image: StaticImageData, index: number) => (
+                      <CarouselItem
+                        key={index}
+                        className={`w-full h-auto rounded-xl flex justify-center ${projects[0].type === "Application" ? "md:basis-1/2" : ""}`}
+                      >
+                        <div className={`overflow-hidden rounded-xl ${projects[0].type === "Website" || projects[0].type === "UX/UI" ? "" : "max-w-[300px]"}`}>
+                          <img
+                            src={image.src}
+                            alt={projects[0].title}
+                            className="object-cover w-full h-auto"
+                          />
+                        </div>
+                      </CarouselItem>
+                    )
+                  )}
+                </CarouselContent>
+                <CarouselPrevious className="hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200" />
+                <CarouselNext className="hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200" />
+                <div className="mt-[20px] text-center text-[14px] text-muted-foreground">
+                  {current} of {count}
+                </div>
+              </Carousel>
+            }
           </div>
           <div className="text-gray mt-[30px] mb-[20px]">
             <h1 className="text-white text-[18px] mt-[10px] mb-[5px]">
@@ -153,7 +135,7 @@ export default function ProjectPage({
                   {projects[0].database && (
                     <h2>- Database: {projects[0].database}</h2>
                   )}
-                  {projects[0].api && <h2>API: {projects[0].api}</h2>}
+                  {/* {projects[0].api && <h2>API: {projects[0].api}</h2>} */}
                   {projects[0].deploy && (
                     <h2>- Deployment: {projects[0].deploy}</h2>
                   )}
