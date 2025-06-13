@@ -237,7 +237,7 @@ export default function Page() {
                     : ""
                     }`}
                 >
-                  <button className="mt-1 flex items-center gap-2 mx-auto text-gray hover:text-white transition duration-300">
+                  <button className="flex items-center gap-2 mx-auto text-gray hover:text-white transition duration-300">
                     {isOpen ? (
                       <>
                         <FaAngleUp />
