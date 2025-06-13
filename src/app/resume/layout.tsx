@@ -1,6 +1,5 @@
 'use client'
 
-import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
@@ -12,10 +11,6 @@ export default function RootLayout({
 }>) {
     return (
         <>
-            <Head>
-                <link rel="icon" href="../../public/images/Sn.png" />
-                <title>s-nudhana | resume</title>
-            </Head>
             <div className="font-primary">
                 <Navbar />
                 <div className="mt-[80px] lg:mt-[100px] flex justify-center">
