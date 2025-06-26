@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 import {
     Popover,
     PopoverContent,
@@ -6,7 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 
-import type { Expertise } from '../types/Expertise';
+import type { Expertise } from '@/types/expertise';
 
 export default function ExpertiseCard({ expertise }: { expertise: Expertise }) {
     return (
@@ -27,7 +29,7 @@ export default function ExpertiseCard({ expertise }: { expertise: Expertise }) {
                         </PopoverTrigger>
                         <PopoverContent className="z-50 w-auto bg-black border-neutral-700 rounded-3xl mr-[20px] md:mr-0 text-white flex gap-4">
                             {expertise.img && expertise.img.map((img, index) => (
-                                <img
+                                <Image
                                     key={index}
                                     src={img}
                                     alt={`Badge ${index + 1}`}

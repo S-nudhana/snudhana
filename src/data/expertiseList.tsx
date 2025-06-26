@@ -4,7 +4,7 @@ import { PiNetwork } from "react-icons/pi";
 import { LuAppWindowMac } from "react-icons/lu";
 
 import networkingBasics from '../../public/images/networking-basics.png';
-import type { Expertise } from '../types/Expertise';
+import type { Expertise } from '@/types/expertise';
 
 export const expertiseList: Expertise[] = [
     {

@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
-interface MenuItem {
+type MenuItem = {
   id: string;
   title: string;
   href: string;
