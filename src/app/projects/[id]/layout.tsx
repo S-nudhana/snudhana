@@ -11,7 +11,7 @@ export default function RootLayout({
 }>) {
     return (
         <>
-            <div className="font-primary">
+            <div className="font-primary cursor-none">
                 <Navbar />
                 <div className="mt-[80px] lg:mt-[100px] flex justify-center">
                     <div className="flex flex-col md:flex-row gap-6 w-[80%] lg:w-[75%]">

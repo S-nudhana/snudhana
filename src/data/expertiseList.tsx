@@ -1,20 +1,22 @@
-import { CgWebsite } from "react-icons/cg";
-import { IoPhonePortraitOutline } from "react-icons/io5";
 import { GoDatabase } from "react-icons/go";
 import { FaUserGroup } from "react-icons/fa6";
+import { PiNetwork } from "react-icons/pi";
+import { LuAppWindowMac } from "react-icons/lu";
 
-import type { Skill } from '../types/skill';
+import networkingBasics from '../../public/images/networking-basics.png';
+import type { Expertise } from '../types/Expertise';
 
-export const skillList: Skill[] = [
+export const expertiseList: Expertise[] = [
     {
-        icon: <CgWebsite />,
+        icon: <LuAppWindowMac />,
         title: 'Web Development',
         description: 'Developing responsive, interactive and dynamic websites using modern web technologies .'
     },
     {
-        icon: <IoPhonePortraitOutline />,
-        title: 'Mobile Development',
-        description: 'Creating mobile applications compatible with both Android and iOS platforms.'
+        icon: <PiNetwork  />,
+        title: 'Networking',
+        description: 'Proficient in configuring and troubleshooting Cisco network devices and config nginx + reverse proxy for server.',
+        img: [networkingBasics.src, networkingBasics.src]
     },
     {
         icon: <FaUserGroup />,

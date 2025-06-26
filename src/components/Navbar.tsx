@@ -85,7 +85,7 @@ export default function Navbar() {
       className={`flex justify-between align-middle items-center md:hidden font-primary fixed top-0 left-0 w-full py-2 pl-10 pr-7 bg-black transition-transform z-50 ${visible || isTop ? "translate-y-0" : "-translate-y-full"
         }`}
     >
-      <a href={isInAnotherPage ? "/" : "#"} className={`text-white font-[600] text-[24px] cursor-pointer`}>
+      <a href={isInAnotherPage ? "/" : "#"} className={`text-white font-[600] text-[24px]`}>
         <h1 className={`${isSheetOpen ? "hidden" : "flex"}`}>
           Snudhana
         </h1>

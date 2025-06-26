@@ -57,7 +57,7 @@ export default function ProjectPage({
               <h2 className="text-gray">{projects[0].type}</h2>
             </div>
             {projects[0].link && (
-              <Button asChild className="bg-[#272626] hover:bg-[#222121]">
+              <Button asChild className="bg-[#272626] hover:bg-[#222121] cursor-none">
                 <Link
                   href={projects[0].link}
                   target="_blank"
@@ -95,8 +95,8 @@ export default function ProjectPage({
                     )
                   )}
                 </CarouselContent>
-                <CarouselPrevious className="hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200" />
-                <CarouselNext className="hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200" />
+                <CarouselPrevious className="hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200 cursor-none" />
+                <CarouselNext className="hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200 cursor-none " />
                 <div className="mt-[20px] text-center text-[14px] text-muted-foreground">
                   {current} of {count}
                 </div>

@@ -30,11 +30,11 @@ import type { RootState } from "@/store/store";
 import { setData } from "@/store/reduxSlices/dataSlice";
 import { projectList } from "@/data/projectList";
 import { stackList } from "@/data/stackList";
-import { skillList } from "@/data/skillList";
+import { expertiseList } from "@/data/expertiseList";
 
 import type { Project } from "@/types/project";
 import type { Stack } from "@/types/stack";
-import type { Skill } from "@/types/skill";
+import type { Expertise } from "@/types/Expertise";
 
 import image from "../../public/images/ProfilePicture.jpg";
 
@@ -123,9 +123,9 @@ export default function Page() {
                   continuously grow as a developer in a fast-evolving tech
                   landscape.
                 </h2>
-                <div className="flex items-center align-middle gap-2 mt-[10px]">
+                <div className="flex items-center align-middle gap-2 mt-[15px]">
                   <LuMapPin className="text-[16px]" />
-                  <h2 className="mt-[10px]">Based in Bangkok, Thailand.</h2>
+                  <h2 className="mt-[3px]">Based in Bangkok, Thailand.</h2>
                 </div>
               </div>
             </section>
@@ -134,8 +134,8 @@ export default function Page() {
                 Expertise
               </h1>
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-                {skillList.map((skill: Skill, index: number) => (
-                  <ExpertiseCard key={index} skill={skill}></ExpertiseCard>
+                {expertiseList.map((expertise: Expertise, index: number) => (
+                  <ExpertiseCard key={index} expertise={expertise}></ExpertiseCard>
                 ))}
               </div>
             </section>
@@ -143,13 +143,13 @@ export default function Page() {
               <div className="flex items-center justify-between align-middle mt-[20px]">
                 <h1 className="text-yellow text-[20px] font-[600]">Projects</h1>
                 <Select onValueChange={handleTypeChange}>
-                  <SelectTrigger className="w-[150px] lg:w-[200px] text-gray border-neutral-700 hover:border-neutral-600 duration-300 ease-in-out">
+                  <SelectTrigger className="w-[150px] lg:w-[200px] text-gray border-neutral-700 hover:border-neutral-600 duration-300 ease-in-out cursor-none">
                     <SelectValue placeholder={category} />
                   </SelectTrigger>
-                  <SelectContent className="bg-[#201f1f] text-white border-none">
+                  <SelectContent className="bg-[#201f1f] text-white border-none cursor-none">
                     <SelectItem
                       value={"all"}
-                      className="text-gray hover:bg-gray focus:text-white focus:bg-transparent duration-300 ease-in-out cursor-pointer"
+                      className="z-0 text-gray hover:bg-gray focus:text-white focus:bg-transparent duration-300 ease-in-out cursor-none"
                     >
                       All
                     </SelectItem>
@@ -157,7 +157,7 @@ export default function Page() {
                       <SelectItem
                         key={index}
                         value={type}
-                        className="text-gray hover:bg-gray focus:text-white focus:bg-transparent duration-300 ease-in-out cursor-pointer"
+                        className="z-0 text-gray hover:bg-gray focus:text-white focus:bg-transparent duration-300 ease-in-out cursor-none"
                       >
                         {type}
                       </SelectItem>
@@ -237,7 +237,7 @@ export default function Page() {
                     : ""
                     }`}
                 >
-                  <button className="flex items-center gap-2 mx-auto text-gray hover:text-white transition duration-300">
+                  <button className="flex items-center gap-2 mx-auto text-gray hover:text-white transition duration-300 cursor-none">
                     {isOpen ? (
                       <>
                         <FaAngleUp />
@@ -281,28 +281,30 @@ export default function Page() {
                 For work, mail me at{" "}
                 <a
                   href="mailto:nu37317@gmail.com"
-                  className="text-white hover:underline underline-offset-[3px] cursor-pointer"
+                  className="text-white hover:underline underline-offset-[3px] cursor-none"
                 >
                   nu37317@gmail.com
                 </a>
               </p>
               <div className="mt-[15px] flex items-center gap-3">
-                <Button className="bg-[#272626] hover:bg-[#222121] text-gray hover:text-white">
+                <Button className="bg-[#272626] hover:bg-[#222121] text-gray hover:text-white cursor-none">
                   <Link
                     href="https://github.com/S-nudhana"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="cursor-none"
                   >
-                    <FaGithub />
+                    <FaGithub className="cursor-none"/>
                   </Link>
                 </Button>
-                <Button className="bg-[#272626] hover:bg-[#222121] text-gray hover:text-white">
+                <Button className="bg-[#272626] hover:bg-[#222121] text-gray hover:text-white cursor-none">
                   <Link
                     href="https://www.linkedin.com/in/nudhana-sarutipaisan/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="cursor-none"
                   >
-                    <FaLinkedin />
+                    <FaLinkedin className="cursor-none" />
                   </Link>
                 </Button>
               </div>

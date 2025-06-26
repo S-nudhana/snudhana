@@ -7,6 +7,7 @@ export const stackList: Stack[] = [
     { name: 'deno', category: 'backend' },
     { name: 'Node.js', category: 'backend' },
     { name: 'Express.js', category: 'backend' },
+    { name: 'ElysiaJs', category: 'backend' },
     // { name: 'Gin', category: 'backend' },
     { name: 'MySQL', category: 'database' },
     { name: 'PostgreSQL', category: 'database' },

@@ -12,6 +12,7 @@
   --green: #a7d2b4;
   --white: #ffffff;
   scroll-behavior: smooth;
+  cursor: none;
 }
 
 body {
@@ -22,7 +23,7 @@ body {
 
 ::selection {
   background-color: var(--gray);
-  color: var(--white);
+  color: var(--black);
 }
 
 @layer base {

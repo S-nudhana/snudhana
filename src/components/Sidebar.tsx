@@ -90,7 +90,7 @@ export default function Sidebar() {
                 isActive
                   ? "text-yellow hover:text-[#efdfab]"
                   : "text-gray hover:text-white"
-              } hover:bg-black w-full justify-start p-0 text-[16px]`}
+              } hover:bg-transparent w-full justify-start p-0 text-[16px] cursor-none`}
               onClick={handleClick}
             >
               <a href={isInProjectPage || isInResumePage ? item.path : item.href}>{item.title}</a>

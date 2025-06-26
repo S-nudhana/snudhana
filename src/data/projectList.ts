@@ -2,7 +2,7 @@ import type { Project } from "../types/project";
 
 import Cer_Cover from "../../public/images/Certificate/Cer_Cover.png";
 
-import pm_Cover from "../../public/images/pm25/pm_Cover.jpg";
+import pm_Cover from "../../public/images/pm25/pm_Cover.png";
 import pm1 from "../../public/images/pm25/pm1.png";
 import pm2 from "../../public/images/pm25/pm2.png";
 import pm3 from "../../public/images/pm25/pm3.png";
@@ -30,7 +30,6 @@ import Re4 from "../../public/images/ReDine/Re4.png";
 import Re5 from "../../public/images/ReDine/Re5.png";
 import Re6 from "../../public/images/ReDine/Re6.png";
 import Re7 from "../../public/images/ReDine/Re7.png";
-import Re8 from "../../public/images/ReDine/Re8.png";
 
 import VC_Cover from "../../public/images/VacciTrack/VC_Cover.png";
 import VC1 from "../../public/images/VacciTrack/VC1.png";
@@ -178,7 +177,7 @@ export const projectList: Project[] = [
     status: "github",
     role: "Technical Architech + Full Stack Developer + UI/UX Designer",
     cover: Re_Cover,
-    subImage: [Re2, Re3, Re4, Re5, Re6, Re7, Re8],
+    subImage: [Re2, Re3, Re4, Re5, Re6, Re7 ],
     frontend: "Flutter + Flutter Material",
     backend: "Bun + Hono + Typescript",
     database: "Firebase realtime database + Firestore database",
