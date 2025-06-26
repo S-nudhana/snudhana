@@ -34,7 +34,7 @@ import { expertiseList } from "@/data/expertiseList";
 
 import type { Project } from "@/types/project";
 import type { Stack } from "@/types/stack";
-import type { Expertise } from "@/types/Expertise";
+import type { Expertise } from "@/types/expertise";
 
 import image from "../../public/images/ProfilePicture.jpg";
 
