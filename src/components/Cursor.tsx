@@ -2,13 +2,12 @@
 
 import React, { useEffect } from 'react';
 
-type FollowCursorProps = {
-  color?: string;
-};
+import type { FollowCursorProps } from '@/types/cursor';
 
 const XL_BREAKPOINT = 1280;
+const CURSOR_COLOR = '#BCBBBBB3';
 
-const FollowCursor: React.FC<FollowCursorProps> = ({ color = '#BCBBBBB3' }) => {
+const FollowCursor: React.FC<FollowCursorProps> = ({ color = CURSOR_COLOR }) => {
   useEffect(() => {
     let canvas: HTMLCanvasElement;
     let context: CanvasRenderingContext2D | null;

@@ -4,45 +4,7 @@ import { Button } from "./ui/button";
 
 import image from "../../public/images/ProfilePicture.jpg";
 
-interface MenuItem {
-  id: string;
-  title: string;
-  href: string;
-  path: string;
-}
-
-const menu: MenuItem[] = [
-  {
-    id: "about",
-    title: "Home",
-    href: "#",
-    path: "/#",
-  },
-  {
-    id: "expertise",
-    title: "Expertise",
-    href: "#expertise",
-    path: "/#expertise",
-  },
-  {
-    id: "projects",
-    title: "Projects",
-    href: "#project",
-    path: "/#project",
-  },
-  {
-    id: "stacks",
-    title: "Stacks",
-    href: "#stack",
-    path: "/#stack",
-  },
-  {
-    id: "contact",
-    title: "Contact",
-    href: "#contact",
-    path: "/#contact",
-  },
-];
+import { menu } from "@/data/menuList"
 
 export default function Sidebar() {
   const [currentMenu, setCurrentMenu] = useState<string>("about");

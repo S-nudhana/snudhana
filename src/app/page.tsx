@@ -100,7 +100,9 @@ export default function Page() {
                 <Image
                   src={image}
                   alt="profilePic"
-                  className="w-[80px] h-[80px] rounded-full"
+                  width={80}
+                  height={80}
+                  className="rounded-full"
                 />
                 <div className="flex flex-col gap-2">
                   <h1 className="text-yellow font-[600] text-[18px]">
@@ -109,6 +111,8 @@ export default function Page() {
                   <h1 className="text-gray">Software Engineer</h1>
                 </div>
               </div>
+              <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="d7fdb4a2-823b-4beb-b52e-5bf0f7b07df0" data-share-badge-host="https://www.credly.com"></div>
+              <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
               <h1 className="text-yellow text-[20px] font-[600]">About</h1>
               <div className="text-gray flex flex-col gap-2 md:gap-0">
                 <h2 className="mt-[10px]">
@@ -294,7 +298,7 @@ export default function Page() {
                     rel="noopener noreferrer"
                     className="cursor-none"
                   >
-                    <FaGithub className="cursor-none"/>
+                    <FaGithub className="cursor-none" />
                   </Link>
                 </Button>
                 <Button className="bg-[#272626] hover:bg-[#222121] text-gray hover:text-white cursor-none">

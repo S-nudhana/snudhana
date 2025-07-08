@@ -1,17 +1,10 @@
 'use client';
 import { type RefObject, useLayoutEffect, useRef, useState } from 'react';
 
-interface MouseState {
-  x: number | null;
-  y: number | null;
-  elementX: number | null;
-  elementY: number | null;
-  elementPositionX: number | null;
-  elementPositionY: number | null;
-}
+import type { CursorState } from '@/types/cursor';
 
-export function useMouse(): [MouseState, RefObject<HTMLDivElement>] {
-  const [state, setState] = useState<MouseState>({
+export function useMouse(): [CursorState, RefObject<HTMLDivElement>] {
+  const [state, setState] = useState<CursorState>({
     x: null,
     y: null,
     elementX: null,
@@ -23,8 +16,8 @@ export function useMouse(): [MouseState, RefObject<HTMLDivElement>] {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      const newState: Partial<MouseState> = {
+    const handleCursorMove = (event: MouseEvent) => {
+      const newState: Partial<CursorState> = {
         x: event.pageX,
         y: event.pageY,
       };
@@ -48,10 +41,10 @@ export function useMouse(): [MouseState, RefObject<HTMLDivElement>] {
       }));
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mousemove', handleCursorMove);
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mousemove', handleCursorMove);
     };
   }, []);
 

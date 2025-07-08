@@ -1,5 +1,5 @@
-import { StaticImageData } from "next/image";
 import Link from "next/link";
+
 import {
   Card,
   CardContent,
@@ -10,22 +10,9 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-interface ProjectProps {
-  projectData: {
-    id: number;
-    title: string;
-    description: string;
-    cover: StaticImageData;
-    subImage?: StaticImageData[];
-    type: string;
-    frontend?: string;
-    backend?: string;
-    database?: string;
-    link?: string;
-  };
-}
+import type { Project } from "@/types/project";
 
-export default function ProjectCard({ projectData }: ProjectProps) {
+export default function ProjectCard({ projectData }: { projectData: Project }) {
   return (
     <Card className="w-full lg:w-[47%] xl:w-[31%] bg-transparent border-none shadow-none">
       <CardHeader className="px-0">

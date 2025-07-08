@@ -135,7 +135,6 @@ export default function ProjectPage({
                   {projects[0].database && (
                     <h2>- Database: {projects[0].database}</h2>
                   )}
-                  {/* {projects[0].api && <h2>API: {projects[0].api}</h2>} */}
                   {projects[0].deploy && (
                     <h2>- Deployment: {projects[0].deploy}</h2>
                   )}

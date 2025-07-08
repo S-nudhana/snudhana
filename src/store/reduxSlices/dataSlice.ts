@@ -1,10 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface DataState {
-  IsOpen: boolean;
-  SelectedType: string;
-  Category: string;
-}
+import type { DataState } from '@/types/redux';
 
 const initialState: DataState = { IsOpen: false, SelectedType: "all", Category: "All" };
 

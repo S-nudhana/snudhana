@@ -1,10 +1,5 @@
-import Image from "next/image"
+import Link from "next/link";
 
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@/components/ui/popover"
 import { Button } from "@/components/ui/button";
 
 
@@ -21,25 +16,12 @@ export default function ExpertiseCard({ expertise }: { expertise: Expertise }) {
                     {expertise.title}
                 </h2>
                 <p className="text-gray">{expertise.description}
-                    <Popover>
-                        <PopoverTrigger asChild>
-                            <Button variant="link" className={`bg-transparent text-white p-0 ml-2 ${expertise.img ? "" : "hidden"} cursor-none`}>
-                                See Badge
-                            </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="z-50 w-auto bg-black border-neutral-700 rounded-3xl mr-[20px] md:mr-0 text-white flex gap-4">
-                            {expertise.img && expertise.img.map((img, index) => (
-                                <Image
-                                    key={index}
-                                    src={img}
-                                    alt={`Badge ${index + 1}`}
-                                    className="w-[150px] md:w-[200px] h-auto"
-                                />
-                            ))}
-                        </PopoverContent>
-                    </Popover>
+                    <Link href={{ pathname: '/cert', query: { data: JSON.stringify(expertise) } }} className={`hover:underline underline-offset-2 bg-transparent text-white p-0 h-0 ml-2 ${expertise.link ? "" : "hidden"} cursor-none`}>
+                        See Badge
+                    </Link>
                 </p>
             </div>
-        </div>
+        </div >
     )
 }
+

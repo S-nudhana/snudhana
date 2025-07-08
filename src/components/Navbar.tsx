@@ -1,6 +1,7 @@
 import { Spiral as Hamburger } from 'hamburger-react';
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+
 import {
   Sheet,
   SheetContent,
@@ -9,45 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
-type MenuItem = {
-  id: string;
-  title: string;
-  href: string;
-  path: string;
-}
-
-const menu: MenuItem[] = [
-  {
-    id: "about",
-    title: "Home",
-    href: "#",
-    path: "/#",
-  },
-  {
-    id: "expertise",
-    title: "Expertise",
-    href: "#expertise",
-    path: "/#expertise",
-  },
-  {
-    id: "projects",
-    title: "Projects",
-    href: "#project",
-    path: "/#project",
-  },
-  {
-    id: "stacks",
-    title: "Stacks",
-    href: "#stack",
-    path: "/#stack",
-  },
-  {
-    id: "contact",
-    title: "Contact",
-    href: "#contact",
-    path: "/#contact",
-  },
-];
+import { menu } from "@/data/menuList";
 
 export default function Navbar() {
   const [isSheetOpen, setIsSheetOpen] = useState<boolean>(false);
