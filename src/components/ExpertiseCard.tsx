@@ -1,8 +1,4 @@
 import Link from "next/link";
-
-import { Button } from "@/components/ui/button";
-
-
 import type { Expertise } from '@/types/expertise';
 
 export default function ExpertiseCard({ expertise }: { expertise: Expertise }) {

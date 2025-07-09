@@ -1,14 +1,12 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Image from "next/image"
-
-import BackBTN from "@/components/BackBTN";
-
+import BackBTN from "@/components/BackBTN"
 import type { Expertise } from '@/types/expertise'
 
-export default function CertPage() {
+function CertContent() {
     const searchParams = useSearchParams()
     const [data, setData] = useState<Expertise>()
 
@@ -31,7 +29,7 @@ export default function CertPage() {
             </h1>
             <p className='text-gray'>{data?.longDescription}</p>
             <div className="flex flex-col md:flex-row flex-wrap gap-6">
-                {data?.link && data.link.map((item, index) => (
+                {data?.link?.map((item, index) => (
                     <div key={index} className="flex flex-col items-center justify-center pt-4 rounded-xl">
                         <Image
                             src={item.img}
@@ -52,5 +50,17 @@ export default function CertPage() {
                 ))}
             </div>
         </div>
+    )
+}
+
+export default function CertPage() {
+    return (
+        <Suspense fallback={
+            <div className="md:ml-[260px] text-lightGray flex lg:justify-start gap-3 lg:gap-7 w-full min-h-[70vh]">
+                <div className="text-gray flex align-middle justify-center">Loading...</div>
+            </div>
+        }>
+            <CertContent />
+        </Suspense>
     )
 }
