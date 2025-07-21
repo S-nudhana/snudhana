@@ -92,7 +92,7 @@ export default function Page() {
     <div className="font-primary">
       <Navbar />
       <div className="mt-[100px] flex justify-center">
-        <div className="flex flex-col md:flex-row gap-6 w-[80%] lg:w-[75%]">
+        <div className="flex flex-col md:flex-row gap-6 w-[85%] lg:w-[75%]">
           <Sidebar />
           <div className="md:ml-[260px] text-gray flex flex-col gap-7 w-full">
             <section id="#">
@@ -111,8 +111,6 @@ export default function Page() {
                   <h1 className="text-gray">Software Engineer</h1>
                 </div>
               </div>
-              <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="d7fdb4a2-823b-4beb-b52e-5bf0f7b07df0" data-share-badge-host="https://www.credly.com"></div>
-              <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
               <h1 className="text-yellow text-[20px] font-[600]">About</h1>
               <div className="text-gray flex flex-col gap-2 md:gap-0">
                 <h2 className="mt-[10px]">

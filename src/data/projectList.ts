@@ -45,7 +45,7 @@ export const projectList: Project[] = [
     id: 1,
     title: "SIT KMUTT Certificate",
     description:
-      "Web application project that allows students who participate the event construct by SIT KMUTT to generate a certificate and manage features the event by SIT admin and professor.",
+      "Internal use web application project that allows students who participate the event construct by SIT KMUTT to generate a certificate and manage features the event by SIT admin and professor.",
     type: "Website",
     features: [
       "Certificate Generating",
@@ -62,7 +62,6 @@ export const projectList: Project[] = [
     ],
     status: "website",
     cover: Cer_Cover,
-    // subImage: [image, image, image],
     role: "Technical Architech + Full Stack Developer + UI/UX Designer + Database Administrator",
     frontend: "React JS + Typescript + Chakra UI + ChartJS",
     backend: "Node.js + ExpressJS + Typescript",

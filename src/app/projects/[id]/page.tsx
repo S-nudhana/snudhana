@@ -75,8 +75,8 @@ export default function ProjectPage({
           </div>
           <Separator className="my-[20px] bg-neutral-700" />
           <div className="w-full flex justify-center items-center">
-            {projects[0].subImage &&
-              <Carousel className="w-[100%] md:w-[85%] mt-[20px]" setApi={setApi}>
+            {projects[0].subImage && 
+              <Carousel className="w-[100%] md:w-[85%] mt-[20px] mb-[30px]" setApi={setApi}>
                 <CarouselContent>
                   {projects[0].subImage?.map(
                     (image: StaticImageData, index: number) => (
@@ -103,7 +103,7 @@ export default function ProjectPage({
               </Carousel>
             }
           </div>
-          <div className="text-gray mt-[30px] mb-[20px]">
+          <div className="text-gray mb-[20px]">
             <h1 className="text-white text-[18px] mt-[10px] mb-[5px]">
               Description
             </h1>
