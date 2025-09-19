@@ -37,7 +37,7 @@ export const expertiseList: Expertise[] = [
                 img: networkingSecure.src
             },
             {
-                text: "AWS Academy Graduate - AWS Academy Cloud Foundations",
+                text: "AWS Academy Cloud Foundations",
                 url: "https://www.credly.com/badges/e4f6787f-4383-40ba-8d55-d6bf92fcb6ab/public_url",
                 img: awsFoundations.src
             }
