@@ -4,10 +4,10 @@ import { PiNetwork } from "react-icons/pi";
 import { LuAppWindowMac } from "react-icons/lu";
 
 import type { Expertise } from '@/types/expertise';
-import networkingBasic from '../../public/images/cert/network-basic.png'
-import networkingConfig from '../../public/images/cert/network-config.png';
-import networkingSecure from '../../public/images/cert/network-secure.png';
-import awsFoundations from '../../public/images/cert/aws-foundations.png';
+import networkingBasic from '../../public/images/Cert/network-basic.png'
+import networkingConfig from '../../public/images/Cert/network-config.png';
+import networkingSecure from '../../public/images/Cert/network-secure.png';
+import awsFoundations from '../../public/images/Cert/aws-foundations.png';
 
 export const expertiseList: Expertise[] = [
     {
