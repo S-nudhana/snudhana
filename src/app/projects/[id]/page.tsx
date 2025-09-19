@@ -1,7 +1,7 @@
 "use client";
 
 import { use, useState, useEffect } from "react";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { IoLinkOutline } from "react-icons/io5";
 import { type CarouselApi } from "@/components/ui/carousel";
@@ -85,7 +85,7 @@ export default function ProjectPage({
                         className={`w-full h-auto rounded-xl flex justify-center ${projects[0].type === "Application" ? "md:basis-1/2" : ""}`}
                       >
                         <div className={`overflow-hidden rounded-xl ${projects[0].type === "Website" || projects[0].type === "UX/UI" ? "" : "max-w-[300px]"}`}>
-                          <img
+                          <Image
                             src={image.src}
                             alt={projects[0].title}
                             className="object-cover w-full h-auto"
