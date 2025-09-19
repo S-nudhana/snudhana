@@ -88,6 +88,9 @@ export default function ProjectPage({
                           <Image
                             src={image.src}
                             alt={projects[0].title}
+                            width={0}
+                            height={0}
+                            sizes="100vw"
                             className="object-cover w-full h-auto"
                           />
                         </div>

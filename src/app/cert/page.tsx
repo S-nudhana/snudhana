@@ -28,15 +28,16 @@ function CertContent() {
                 {data?.title} Certificates
             </h1>
             <p className='text-gray'>{data?.longDescription}</p>
-            <div className="flex flex-col md:flex-row flex-wrap gap-6">
+            <div className="flex flex-col md:flex-row flex-wrap gap-6 w-full">
                 {data?.link?.map((item, index) => (
                     <div key={index} className="flex flex-col items-center justify-center pt-4 rounded-xl">
                         <Image
                             src={item.img}
                             alt={item.text}
-                            width={300}
-                            height={200}
-                            className="rounded-lg"
+                            width={0}
+                            height={0}
+                            sizes='100vw'
+                            className="rounded-lg w-[300px] lg:w-[275px] h-auto"
                         />
                         <a
                             href={item.url}
