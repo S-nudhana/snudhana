@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import {
   Card,
@@ -16,7 +17,7 @@ export default function ProjectCard({ projectData }: { projectData: Project }) {
   return (
     <Card className="w-full lg:w-[47%] xl:w-[31%] bg-transparent border-none shadow-none">
       <CardHeader className="px-0">
-        <img
+        <Image
           src={projectData.cover.src}
           alt="Project Image"
           className="h-auto w-full md:w-[auto] object-cover rounded-lg"

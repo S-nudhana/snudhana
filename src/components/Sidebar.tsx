@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 
@@ -20,7 +21,7 @@ export default function Sidebar() {
 
   return (
     <div className="hidden md:flex flex-col w-[200px] gap-6 fixed">
-      <img
+      <Image
         src={image.src}
         alt="profilePic"
         className="w-[80px] h-[80px] rounded-full"
