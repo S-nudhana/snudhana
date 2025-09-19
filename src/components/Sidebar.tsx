@@ -13,7 +13,7 @@ export default function Sidebar() {
 
   useEffect(() => {
     setCurrentMenu(pathname.includes("projects") ? "projects" : "about");
-  }, []);
+  }, [pathname]);
 
   const router = useRouter();
   const isInProjectPage = pathname.includes("projects");

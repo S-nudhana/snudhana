@@ -72,7 +72,7 @@ export default function Page() {
         Category: category,
       })
     );
-  }, [isOpen, selectedType, category]);
+  }, [dispatch, isOpen, selectedType, category]);
 
   const handleTypeChange = (value: string) => {
     setSelectedType(value);
