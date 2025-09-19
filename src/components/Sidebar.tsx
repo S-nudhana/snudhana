@@ -24,7 +24,9 @@ export default function Sidebar() {
       <Image
         src={image.src}
         alt="profilePic"
-        className="w-[80px] h-[80px] rounded-full"
+        width={80}
+        height={80}
+        className="rounded-full"
       />
       <div>
         <h1 className="text-yellow font-[600] text-[18px]">

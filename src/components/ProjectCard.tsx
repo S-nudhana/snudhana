@@ -20,6 +20,9 @@ export default function ProjectCard({ projectData }: { projectData: Project }) {
         <Image
           src={projectData.cover.src}
           alt="Project Image"
+          width={0}
+          height={0}
+          sizes="100vw"
           className="h-auto w-full md:w-[auto] object-cover rounded-lg"
         />
       </CardHeader>
