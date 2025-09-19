@@ -7,7 +7,7 @@ import type { Expertise } from '@/types/expertise';
 import networkingBasic from '../../public/images/Cert/network-basic.png'
 import networkingConfig from '../../public/images/Cert/network-config.png';
 import networkingSecure from '../../public/images/Cert/network-secure.png';
-import awsFoundations from '../../public/images/Cert/aws-foundations.png';
+import awsFoundations from '../../public/images/Cert/aws-foundation.png';
 
 export const expertiseList: Expertise[] = [
     {
