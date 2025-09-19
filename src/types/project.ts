@@ -12,6 +12,7 @@ export type Project = {
   role: string;
   frontend?: string;
   backend?: string;
+  ai_trained_model?: string;
   database?: string;
   deploy?: string;
   link?: string;

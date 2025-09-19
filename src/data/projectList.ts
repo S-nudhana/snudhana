@@ -62,7 +62,6 @@ export const projectList: Project[] = [
     ],
     status: "website",
     cover: Cer_Cover,
-    // subImage: [image, image, image],
     role: "Technical Architech + Full Stack Developer + UI/UX Designer + Database Administrator",
     frontend: "React JS + Typescript + Chakra UI + ChartJS",
     backend: "Node.js + ExpressJS + Typescript",
@@ -94,16 +93,6 @@ export const projectList: Project[] = [
     deploy: "Docker + Linux Ubuntu VM + nginx",
     link: "https://pm25project.sit.kmutt.ac.th",
   },
-  // {
-  //   id: 7,
-  //   title: "Cluo Biz",
-  //   description:
-  //     "Redesign UX of IA/POS system for staff and cashier use in laundry shop of Cluo Biz software.",
-  //   type: "UX/UI",
-  //   status: "inProgress",
-  //   role: "UX/UI Designer",
-  //   cover: image,
-  // },
   {
     id: 3,
     title: "Campus Link",
@@ -159,7 +148,7 @@ export const projectList: Project[] = [
     id: 6,
     title: "ReDine",
     description:
-      "A Flutter app that helps reduce food waste by suggesting personalized recipes using TheMealDB and my custom algorithm. It recommends meals based on available ingredients and least ingredients to by to help users exploring new recipe and reduce waste.",
+      "A Flutter app that helps reduce food waste by suggesting personalized recipes using TheMealDB and my custom algorithm. It recommends meals based on available ingredients and least ingredients to by to help users exploring new recipe and reduce waste. We also develop further by implementing AI trained model to improve searching algorithm and add ingredients scanner from image to enhance user experience.",
     features: [
       "Personalized Recipe Suggestions",
       "Category Meal Suggestions",
@@ -172,6 +161,8 @@ export const projectList: Project[] = [
       "Ingredient + Measurement",
       "User Allergy Memorize",
       "User Login + Register",
+      "AI powered searching algorithm",
+      "Ingredients Scanner from image"
     ],
     type: "Application",
     status: "github",
@@ -179,8 +170,10 @@ export const projectList: Project[] = [
     cover: Re_Cover,
     subImage: [Re2, Re3, Re4, Re5, Re6, Re7 ],
     frontend: "Flutter + Flutter Material",
-    backend: "Bun + Hono + Typescript",
+    backend: "Hono + Typescript + FastAPI + Python",
+    ai_trained_model: "Custom Model using Google Colab",
     database: "Firebase realtime database + Firestore database",
+    deploy: "Docker + Linux Ubuntu VM (Backend)",
     link: "https://github.com/orgs/ReDine-Flutter-Project-G4/repositories",
   },
   {
@@ -222,8 +215,8 @@ export const projectList: Project[] = [
     cover: DPM_Cover,
     subImage: [DPM1, DPM2],
     frontend: "React JS + Typescript + Chakra UI",
-    link: "https://github.com/S-nudhana/KMUTT-SIT-Digital-Product-Development",
     deploy: "Docker + Linux Ubuntu VM + nginx",
+    link: "https://github.com/S-nudhana/KMUTT-SIT-Digital-Product-Development",
   },
   
 ];
