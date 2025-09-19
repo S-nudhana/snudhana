@@ -40,4 +40,6 @@ export const stackList: Stack[] = [
     { name: 'Flutter', category: 'frontend' },
     { name: 'Linux Ubuntu', category: 'tools' },
     { name: 'Bash', category: 'language' },
+    { name: 'FastAPI', category: 'backend'},
+    { name: 'Python', category: 'language'}
 ];

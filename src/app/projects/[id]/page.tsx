@@ -36,7 +36,6 @@ export default function ProjectPage({
     if (!api) {
       return;
     }
-
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
 
@@ -44,6 +43,7 @@ export default function ProjectPage({
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
+
   return (
     <>
       <div className="md:ml-[260px] text-lightGray flex flex-col lg:justify-start gap-3 lg:gap-7 w-full">
@@ -132,6 +132,7 @@ export default function ProjectPage({
                     <h2>- Frontend: {projects[0].frontend}</h2>
                   )}
                   {projects[0].backend && <h2>- Backend: {projects[0].backend}</h2>}
+                  {projects[0].ai_trained_model && <h2>- AI Trained Model: {projects[0].ai_trained_model}</h2>}
                   {projects[0].database && (
                     <h2>- Database: {projects[0].database}</h2>
                   )}

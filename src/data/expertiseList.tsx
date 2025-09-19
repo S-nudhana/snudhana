@@ -6,6 +6,8 @@ import { LuAppWindowMac } from "react-icons/lu";
 import type { Expertise } from '@/types/expertise';
 import networkingBasic from '../../public/images/ciscoCert/network-basic.png'
 import networkingConfig from '../../public/images/ciscoCert/network-config.png';
+import networkingSecure from '../../public/images/ciscoCert/network-secure.png';
+import awsFoundations from '../../public/images/ciscoCert/aws-foundations.png';
 
 export const expertiseList: Expertise[] = [
     {
@@ -29,6 +31,16 @@ export const expertiseList: Expertise[] = [
                 url: "https://www.credly.com/badges/e74ff672-2296-4eb4-bbba-2a44061500d8/public_url",
                 img: networkingBasic.src
             },
+            {
+                text: "Network Support and Security",
+                url: "https://www.credly.com/badges/1927035c-e153-4f62-8107-aa6dc087c722/public_url",
+                img: networkingSecure.src
+            },
+            {
+                text: "AWS Academy Graduate - AWS Academy Cloud Foundations",
+                url: "https://www.credly.com/badges/e4f6787f-4383-40ba-8d55-d6bf92fcb6ab/public_url",
+                img: awsFoundations.src
+            }
         ]
     },
     {
