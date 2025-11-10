@@ -40,7 +40,26 @@ import VC5 from "../../public/images/VacciTrack/VC5.png";
 import VC6 from "../../public/images/VacciTrack/VC6.png";
 import VC7 from "../../public/images/VacciTrack/VC7.png";
 
+import sittt_Cover from "../../public/images/sittt_cover.png";
+
 export const projectList: Project[] = [
+  {
+    id: 10,
+    title: "SIT KMUTT Time Table",
+    description: "",
+    type: "Website",
+    features: [
+
+    ],
+    status: "github",
+    cover: sittt_Cover,
+    role: "Full Stack Developer + Database Developer",
+    frontend: "React JS + Typescript + Chakra UI + Redux + React Query + Zod",
+    backend: "C# + .NET Core + Entity Framework",
+    database: "MySQL",
+    deploy: "Docker + Linux Ubuntu VM + nginx",
+    link: "https://github.com/S-nudhana/SIT_Timetable"
+  },
   {
     id: 1,
     title: "SIT KMUTT Certificate",
@@ -62,7 +81,7 @@ export const projectList: Project[] = [
     ],
     status: "website",
     cover: Cer_Cover,
-    role: "Technical Architech + Full Stack Developer + UI/UX Designer + Database Administrator",
+    role: "Technical Architech + Full Stack Developer + UI/UX Designer + Database Developer",
     frontend: "React JS + Typescript + Chakra UI + ChartJS",
     backend: "Node.js + ExpressJS + Typescript",
     database: "MySQL",
@@ -136,11 +155,11 @@ export const projectList: Project[] = [
     ],
     type: "Application",
     status: "github",
-    role: "Full Stack Developer + UI/UX Designer + Database Architect",
+    role: "Full Stack Developer + UI/UX Designer + Database Developer",
     cover: VC_Cover,
     subImage: [VC1, VC2, VC3, VC4, VC5, VC6, VC7],
     frontend: "Flutter + Flutter Material",
-    backend: "Bun + Hono + Typescript",
+    backend: "Hono + Typescript",
     database: "Firebase Realtime Database + Firestore Database",
     link: "https://github.com/G3-VacciTrack",
   },
@@ -168,7 +187,7 @@ export const projectList: Project[] = [
     status: "github",
     role: "Technical Architech + Full Stack Developer + UI/UX Designer",
     cover: Re_Cover,
-    subImage: [Re2, Re3, Re4, Re5, Re6, Re7 ],
+    subImage: [Re2, Re3, Re4, Re5, Re6, Re7],
     frontend: "Flutter + Flutter Material",
     backend: "Hono + Typescript + FastAPI + Python",
     ai_trained_model: "Custom Model using Google Colab",
@@ -195,7 +214,7 @@ export const projectList: Project[] = [
     ],
     type: "Website",
     status: "github",
-    role: "Full Stack Developer + UI/UX Designer + Database Administrator",
+    role: "Full Stack Developer + UI/UX Designer + Database Developer",
     cover: HW_Cover,
     subImage: [HW1, HW2],
     frontend: "React JS + Chakra UI",
@@ -218,5 +237,5 @@ export const projectList: Project[] = [
     deploy: "Docker + Linux Ubuntu VM + nginx",
     link: "https://github.com/S-nudhana/KMUTT-SIT-Digital-Product-Development",
   },
-  
+
 ];
