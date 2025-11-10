@@ -32,7 +32,7 @@ export default function Sidebar() {
         <h1 className="text-yellow font-[600] text-[18px]">
           Nudhana Sarutipaisan
         </h1>
-        <h1 className="text-gray">Software Engineer</h1>
+        <h1 className="text-gray">Backend Developer</h1>
       </div>
       <div className="gap-2 flex flex-col">
         {menu.map((item, index) => {

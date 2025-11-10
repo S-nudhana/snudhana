@@ -108,7 +108,7 @@ export default function Page() {
                   <h1 className="text-yellow font-[600] text-[18px]">
                     Nudhana Sarutipaisan
                   </h1>
-                  <h1 className="text-gray">Software Engineer</h1>
+                  <h1 className="text-gray">Backend Developer</h1>
                 </div>
               </div>
               <h1 className="text-yellow text-[20px] font-[600]">About</h1>
