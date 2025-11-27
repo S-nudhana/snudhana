@@ -46,16 +46,21 @@ export const projectList: Project[] = [
   {
     id: 10,
     title: "SIT KMUTT Time Table",
-    description: "",
+    description: "The website is a timetable display system for events organized under SIT KMUTT. It allows external participants to easily view schedules, locations, and activity timelines through a simple, accessible interface. By gathering all event details in one place, the system helps ensure clear communication and smooth coordination for workshops, competitions, and other faculty-hosted activities.",
     type: "Website",
     features: [
-
+      "Admin Event timetable Management",
+      "Timeline like display",
+      "Public Event View Page",
+      "Real-time Timetable Updates",
+      "Multi-day Event Support",
+      "Search Function"
     ],
     status: "github",
     cover: sittt_Cover,
     role: "Full Stack Developer + Database Developer",
     frontend: "React JS + Typescript + Chakra UI + Redux + React Query + Zod",
-    backend: "C# + .NET Core + Entity Framework",
+    backend: "C# + .NET + Entity Framework",
     database: "MySQL",
     deploy: "Docker + Linux Ubuntu VM + nginx",
     link: "https://github.com/S-nudhana/SIT_Timetable"

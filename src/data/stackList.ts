@@ -3,7 +3,10 @@ import type { Stack } from "@/types/stack";
 export const stackList: Stack[] = [
     { name: 'React JS', category: 'frontend' },
     { name: 'Next.js', category: 'frontend' },
-    { name: 'bun', category: 'backend' },
+    { name: 'C#', category: 'language' },
+    { name: 'Go', category: 'language' },
+    { name: '.NET', category: 'backend' },
+    { name: 'fiber', category: 'backend' },
     { name: 'deno', category: 'backend' },
     { name: 'Node.js', category: 'backend' },
     { name: 'Express.js', category: 'backend' },
@@ -25,7 +28,7 @@ export const stackList: Stack[] = [
     { name: 'Radix UI', category: 'styling' },
     { name: 'Prisma ORM', category: 'database' },
     { name: 'SQL', category: 'language' },
-    { name: 'hono' , category: 'backend' },
+    { name: 'hono', category: 'backend' },
     { name: 'svelte', category: 'frontend' },
     { name: 'Dart', category: 'language' },
     { name: 'Figma', category: 'design' },
@@ -40,6 +43,6 @@ export const stackList: Stack[] = [
     { name: 'Flutter', category: 'frontend' },
     { name: 'Linux Ubuntu', category: 'tools' },
     { name: 'Bash', category: 'language' },
-    { name: 'FastAPI', category: 'backend'},
-    { name: 'Python', category: 'language'}
+    { name: 'FastAPI', category: 'backend' },
+    { name: 'Python', category: 'language' }
 ];
