@@ -22,7 +22,7 @@ function CertContent() {
     }, [searchParams])
 
     return (
-        <div className="md:ml-[260px] text-lightGray flex flex-col lg:justify-start gap-3 lg:gap-7 w-full min-h-[70vh]">
+        <div className="md:ml-[300px] text-lightGray flex flex-col lg:justify-start gap-3 lg:gap-7 w-full min-h-[70vh]">
             <BackBTN />
             <h1 className="text-3xl font-bold text-yellow">
                 {data?.title} Certificates
@@ -43,7 +43,7 @@ function CertContent() {
                             href={item.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mt-2 text-gray hover:underline underline-offset-2 cursor-none"
+                            className="mt-2 text-gray hover:underline underline-offset-2"
                         >
                             {item.text}
                         </a>
@@ -57,7 +57,7 @@ function CertContent() {
 export default function CertPage() {
     return (
         <Suspense fallback={
-            <div className="md:ml-[260px] text-lightGray flex lg:justify-start gap-3 lg:gap-7 w-full min-h-[70vh]">
+            <div className="md:ml-[300px] text-lightGray flex lg:justify-start gap-3 lg:gap-7 w-full min-h-[70vh]">
                 <div className="text-gray flex align-middle justify-center">Loading...</div>
             </div>
         }>

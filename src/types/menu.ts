@@ -3,4 +3,5 @@ export type MenuItem = {
   title: string;
   href: string;
   path: string;
+  hidden?: boolean;
 }

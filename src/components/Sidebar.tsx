@@ -7,6 +7,8 @@ import image from "../../public/images/ProfilePicture.jpg";
 
 import { menu } from "@/data/menuList"
 
+const visibleMenu = menu.filter((item) => !item.hidden);
+
 export default function Sidebar() {
   const [currentMenu, setCurrentMenu] = useState<string>("about");
   const pathname = usePathname();
@@ -20,7 +22,7 @@ export default function Sidebar() {
   const isInResumePage = pathname.includes("resume");
 
   return (
-    <div className="hidden md:flex flex-col w-[200px] gap-6 fixed">
+    <div className="hidden md:flex flex-col w-[240px] gap-6 fixed">
       <Image
         src={image.src}
         alt="profilePic"
@@ -29,13 +31,13 @@ export default function Sidebar() {
         className="rounded-full"
       />
       <div>
-        <h1 className="text-yellow font-[600] text-[18px]">
+        <h1 className="font-display text-yellow text-[28px]">
           Nudhana Sarutipaisan
         </h1>
         <h1 className="text-gray">Software Engineer</h1>
       </div>
       <div className="gap-2 flex flex-col">
-        {menu.map((item, index) => {
+        {visibleMenu.map((item, index) => {
           const isActive = item.id === currentMenu;
 
           const handleClick = (e: React.MouseEvent) => {
@@ -55,7 +57,7 @@ export default function Sidebar() {
                 isActive
                   ? "text-yellow hover:text-[#efdfab]"
                   : "text-gray hover:text-white"
-              } hover:bg-transparent w-full justify-start p-0 text-[16px] cursor-none`}
+              } hover:bg-transparent w-full justify-start p-0 text-[16px]`}
               onClick={handleClick}
             >
               <a href={isInProjectPage || isInResumePage ? item.path : item.href}>{item.title}</a>

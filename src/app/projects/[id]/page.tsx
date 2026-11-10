@@ -46,7 +46,7 @@ export default function ProjectPage({
 
   return (
     <>
-      <div className="md:ml-[260px] text-lightGray flex flex-col lg:justify-start gap-3 lg:gap-7 w-full">
+      <div className="md:ml-[300px] text-lightGray flex flex-col lg:justify-start gap-3 lg:gap-7 w-full">
         <BackBTN />
         <div className="justify-center items-center flex flex-col lg:justify-start lg:items-start w-full">
           <div className="flex flex-col lg:flex-row justify-start items-start lg:justify-between lg:items-center w-full gap-3">
@@ -57,7 +57,7 @@ export default function ProjectPage({
               <h2 className="text-gray">{projects[0].type}</h2>
             </div>
             {projects[0].link && (
-              <Button asChild className="bg-[#272626] hover:bg-[#222121] cursor-none">
+              <Button asChild className="bg-[#272626] hover:bg-[#222121]">
                 <Link
                   href={projects[0].link}
                   target="_blank"
@@ -98,8 +98,8 @@ export default function ProjectPage({
                     )
                   )}
                 </CarouselContent>
-                <CarouselPrevious className="hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200 cursor-none" />
-                <CarouselNext className="hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200 cursor-none " />
+                <CarouselPrevious className="hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200" />
+                <CarouselNext className="hidden md:flex bg-gray border-gray hover:bg-white hover:border-white text-black duration-200" />
                 <div className="mt-[20px] text-center text-[14px] text-muted-foreground">
                   {current} of {count}
                 </div>
