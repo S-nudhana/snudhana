@@ -19,9 +19,9 @@ export const experienceList: Experience[] = [
     ],
   },
   {
-    company: "SIT-KMUTT",
+    company: "SIT - KMUTT",
     logo: "/images/Experience/sit-kmutt-mark.png",
-    location: "Hybrid",
+    location: "Bangkok City, Thailand · Hybrid",
     roles: [
       {
         title: "Software Engineer (Student Employment Program)",
@@ -31,10 +31,9 @@ export const experienceList: Experience[] = [
     ],
   },
   {
-    company: "Google Developer Groups on Campus",
+    company: "Google Developer Groups on Campus - KMUTT",
     logo: "/images/Experience/gdg-mark.svg",
-    summary: "King Mongkut's University of Technology Thonburi",
-    location: "Hybrid",
+    location: "Bangkok City, Thailand · Hybrid",
     roles: [
       {
         title: "Chapter Lead",

@@ -32,7 +32,7 @@ export default function RootLayout({
         <title>snudhana</title>
       </head>
       <body>
-        <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="fixed inset-0 h-[100lvh] z-0 pointer-events-none">
           <Dither
             palette={["#0f0e0e", "#191817", "#232221", "#2d2b2a"]}
             ditherMode="bayer"
