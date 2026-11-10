@@ -11,6 +11,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import ExperienceSection from "@/components/ExperienceSection";
+import EducationSection from "@/components/EducationSection";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -263,6 +264,7 @@ export default function Page() {
                 ))}
               </div>
             </section>
+            <EducationSection />
             <section id="contact">
               <h1 className="font-display text-yellow text-[28px]">Contact</h1>
               <p className="text-gray mt-[10px]">
