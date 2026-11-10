@@ -32,7 +32,7 @@ export default function RootLayout({
         <title>snudhana</title>
       </head>
       <body>
-        <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <Dither
             palette={["#0f0e0e", "#191817", "#232221", "#2d2b2a"]}
             ditherMode="bayer"
@@ -44,6 +44,7 @@ export default function RootLayout({
             mouseEffect="erase"
             mouseRadius={0.3}
             clickRipple={false}
+            dpr={1}
           />
         </div>
         <div className="relative z-10">
