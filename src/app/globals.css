@@ -18,15 +18,6 @@ body {
   background-color: var(--black);
   margin: 0;
   padding: 0;
-  /*
-   * Containing block for the <Dither /> background layer.
-   *
-   * That layer is `absolute inset-0` rather than `fixed`: iOS Safari sizes and
-   * clips fixed elements to its own viewport box, so the canvas could never
-   * reach the strip behind the collapsing address bar. Anchoring it to the
-   * body instead makes it span the full document, like the text does.
-   */
-  position: relative;
 }
 
 ::selection {
