@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 const NotFound = () => {
   return (
     <div className='flex items-center justify-center flex-col h-screen text-gray gap-[20px] px-[30px]'>
-      <div className='flex flex-row items-center justify-center text-yellow gap-[20px] text-[20px]'>
+      <div className='flex flex-row items-center justify-center font-display text-yellow text-[28px] gap-[20px]'>
         <h1 className='font-semibold'>404</h1>
         <Separator orientation="vertical" className='bg-yellow'/>
         <h1>Page Not Found</h1>
