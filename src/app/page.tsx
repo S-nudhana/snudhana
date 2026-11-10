@@ -10,7 +10,7 @@ import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
-import ExpertiseCard from "@/components/ExpertiseCard";
+import ExperienceSection from "@/components/ExperienceSection";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -30,11 +30,10 @@ import type { RootState } from "@/store/store";
 import { setData } from "@/store/reduxSlices/dataSlice";
 import { projectList } from "@/data/projectList";
 import { stackList } from "@/data/stackList";
-import { expertiseList } from "@/data/expertiseList";
+import { features } from "@/config/features";
 
 import type { Project } from "@/types/project";
 import type { Stack } from "@/types/stack";
-import type { Expertise } from "@/types/expertise";
 
 import image from "../../public/images/ProfilePicture.jpg";
 
@@ -90,11 +89,10 @@ export default function Page() {
 
   return (
     <div className="font-primary">
-      <Navbar />
       <div className="mt-[100px] flex justify-center">
         <div className="flex flex-col md:flex-row gap-6 w-[85%] lg:w-[75%]">
           <Sidebar />
-          <div className="md:ml-[260px] text-gray flex flex-col gap-7 w-full">
+          <div className="md:ml-[300px] text-gray flex flex-col gap-7 w-full">
             <section id="#">
               <div className="md:hidden flex items-center justify-left gap-5 mb-[40px]">
                 <Image
@@ -105,25 +103,20 @@ export default function Page() {
                   className="rounded-full"
                 />
                 <div className="flex flex-col gap-2">
-                  <h1 className="text-yellow font-[600] text-[18px]">
+                  <h1 className="font-display text-yellow text-[28px]">
                     Nudhana Sarutipaisan
                   </h1>
                   <h1 className="text-gray">Software Engineer</h1>
                 </div>
               </div>
-              <h1 className="text-yellow text-[20px] font-[600]">About</h1>
+              <h1 className="font-display text-yellow text-[28px]">About</h1>
               <div className="text-gray flex flex-col gap-2 md:gap-0">
                 <h2 className="mt-[10px]">
                   Computer Science International Program student at King
-                  Mongkut&#39;s University of Technology Thonburi, driven by a
-                  strong passion for creating clean, efficient, and user-focused
-                  digital experiences. I&#39;m particularly interested in minimalist
-                  web development, where design meets functionality, and in
-                  database design and development, where structure and
-                  optimization play key roles in building scalable systems.
-                  Eager to apply my skills to solve real-world problems and
-                  continuously grow as a developer in a fast-evolving tech
-                  landscape.
+                  Mongkut&#39;s University of Technology Thonburi. I&#39;m drawn to
+                  minimalist web development, where design meets functionality,
+                  and to database design, where structure and optimization keep
+                  systems scalable.
                 </h2>
                 <div className="flex items-center align-middle gap-2 mt-[15px]">
                   <LuMapPin className="text-[16px]" />
@@ -131,76 +124,39 @@ export default function Page() {
                 </div>
               </div>
             </section>
-            <section id="expertise">
-              <h1 className="text-yellow text-[20px] font-[600] mb-[20px]">
-                Expertise
-              </h1>
-              <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-                {expertiseList.map((expertise: Expertise, index: number) => (
-                  <ExpertiseCard key={index} expertise={expertise}></ExpertiseCard>
-                ))}
-              </div>
-            </section>
-            <section id="project">
-              <div className="flex items-center justify-between align-middle mt-[20px]">
-                <h1 className="text-yellow text-[20px] font-[600]">Projects</h1>
-                <Select onValueChange={handleTypeChange}>
-                  <SelectTrigger className="w-[150px] lg:w-[200px] text-gray border-neutral-700 hover:border-neutral-600 duration-300 ease-in-out cursor-none">
-                    <SelectValue placeholder={category} />
-                  </SelectTrigger>
-                  <SelectContent className="bg-[#201f1f] text-white border-none cursor-none">
-                    <SelectItem
-                      value={"all"}
-                      className="z-0 text-gray hover:bg-gray focus:text-white focus:bg-transparent duration-300 ease-in-out cursor-none"
-                    >
-                      All
-                    </SelectItem>
-                    {categorizedType.map((type: string, index: number) => (
+            <ExperienceSection />
+            {features.projects && (
+              <section id="project">
+                <div className="flex items-center justify-between align-middle mt-[20px]">
+                  <h1 className="font-display text-yellow text-[28px]">Projects</h1>
+                  <Select onValueChange={handleTypeChange}>
+                    <SelectTrigger className="w-[150px] lg:w-[200px] text-gray border-neutral-700 hover:border-neutral-600 duration-300 ease-in-out">
+                      <SelectValue placeholder={category} />
+                    </SelectTrigger>
+                    <SelectContent className="bg-[#201f1f] text-white border-none">
                       <SelectItem
-                        key={index}
-                        value={type}
-                        className="z-0 text-gray hover:bg-gray focus:text-white focus:bg-transparent duration-300 ease-in-out cursor-none"
+                        value={"all"}
+                        className="z-0 text-gray hover:bg-gray focus:text-white focus:bg-transparent duration-300 ease-in-out"
                       >
-                        {type}
+                        All
                       </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <Collapsible
-                open={isOpen}
-                onOpenChange={setIsOpen}
-                className="w-full"
-              >
-                <div className="flex flex-wrap justify-center md:justify-between gap-x-2">
-                  {(() => {
-                    const filtered = projectList
-                      .filter(
-                        (project) =>
-                          project.type === selectedType ||
-                          selectedType === "all"
-                      )
-                      .slice(0, isIpad ? 4 : 3);
-                    const placeholders =
-                      filtered.length < 3 ? 3 - filtered.length : 0;
-                    return (
-                      <>
-                        {filtered.map((project, index) => (
-                          <ProjectCard key={index} projectData={project} />
-                        ))}
-                        {Array.from({ length: placeholders }).map(
-                          (_, index) => (
-                            <div
-                              key={`placeholder-${index}`}
-                              className="w-[30%] invisible"
-                            />
-                          )
-                        )}
-                      </>
-                    );
-                  })()}
+                      {categorizedType.map((type: string, index: number) => (
+                        <SelectItem
+                          key={index}
+                          value={type}
+                          className="z-0 text-gray hover:bg-gray focus:text-white focus:bg-transparent duration-300 ease-in-out"
+                        >
+                          {type}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
-                <CollapsibleContent>
+                <Collapsible
+                  open={isOpen}
+                  onOpenChange={setIsOpen}
+                  className="w-full"
+                >
                   <div className="flex flex-wrap justify-center md:justify-between gap-x-2">
                     {(() => {
                       const filtered = projectList
@@ -209,8 +165,9 @@ export default function Page() {
                             project.type === selectedType ||
                             selectedType === "all"
                         )
-                        .slice(isIpad ? 4 : 3);
-                      const placeholders = filtered.length % 3;
+                        .slice(0, isIpad ? 4 : 3);
+                      const placeholders =
+                        filtered.length < 3 ? 3 - filtered.length : 0;
                       return (
                         <>
                           {filtered.map((project, index) => (
@@ -228,35 +185,64 @@ export default function Page() {
                       );
                     })()}
                   </div>
-                </CollapsibleContent>
-                <CollapsibleTrigger
-                  asChild
-                  className={`${projectList.filter(
-                    (project) =>
-                      project.type === selectedType || selectedType === "all"
-                  ).length <= 3
-                    ? "hidden"
-                    : ""
-                    }`}
-                >
-                  <button className="flex items-center gap-2 mx-auto text-gray hover:text-white transition duration-300 cursor-none">
-                    {isOpen ? (
-                      <>
-                        <FaAngleUp />
-                        Show Less
-                      </>
-                    ) : (
-                      <>
-                        <FaAngleDown />
-                        Show More
-                      </>
-                    )}
-                  </button>
-                </CollapsibleTrigger>
-              </Collapsible>
-            </section>
+                  <CollapsibleContent>
+                    <div className="flex flex-wrap justify-center md:justify-between gap-x-2">
+                      {(() => {
+                        const filtered = projectList
+                          .filter(
+                            (project) =>
+                              project.type === selectedType ||
+                              selectedType === "all"
+                          )
+                          .slice(isIpad ? 4 : 3);
+                        const placeholders = filtered.length % 3;
+                        return (
+                          <>
+                            {filtered.map((project, index) => (
+                              <ProjectCard key={index} projectData={project} />
+                            ))}
+                            {Array.from({ length: placeholders }).map(
+                              (_, index) => (
+                                <div
+                                  key={`placeholder-${index}`}
+                                  className="w-[30%] invisible"
+                                />
+                              )
+                            )}
+                          </>
+                        );
+                      })()}
+                    </div>
+                  </CollapsibleContent>
+                  <CollapsibleTrigger
+                    asChild
+                    className={`${projectList.filter(
+                      (project) =>
+                        project.type === selectedType || selectedType === "all"
+                    ).length <= 3
+                      ? "hidden"
+                      : ""
+                      }`}
+                  >
+                    <button className="flex items-center gap-2 mx-auto text-gray hover:text-white transition duration-300">
+                      {isOpen ? (
+                        <>
+                          <FaAngleUp />
+                          Show Less
+                        </>
+                      ) : (
+                        <>
+                          <FaAngleDown />
+                          Show More
+                        </>
+                      )}
+                    </button>
+                  </CollapsibleTrigger>
+                </Collapsible>
+              </section>
+            )}
             <section id="stack">
-              <h1 className="text-yellow text-[20px] font-semibold">
+              <h1 className="font-display text-yellow text-[28px]">
                 Development Stack
               </h1>
               <div>
@@ -278,35 +264,33 @@ export default function Page() {
               </div>
             </section>
             <section id="contact">
-              <h1 className="text-yellow text-[20px] font-[600]">Contact</h1>
+              <h1 className="font-display text-yellow text-[28px]">Contact</h1>
               <p className="text-gray mt-[10px]">
                 For work, mail me at{" "}
                 <a
                   href="mailto:nu37317@gmail.com"
-                  className="text-white hover:underline underline-offset-[3px] cursor-none"
+                  className="text-white hover:underline underline-offset-[3px]"
                 >
                   nu37317@gmail.com
                 </a>
               </p>
               <div className="mt-[15px] flex items-center gap-3">
-                <Button className="bg-[#272626] hover:bg-[#222121] text-gray hover:text-white cursor-none">
+                <Button className="bg-[#272626] hover:bg-[#222121] text-gray hover:text-white">
                   <Link
                     href="https://github.com/S-nudhana"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="cursor-none"
                   >
-                    <FaGithub className="cursor-none" />
+                    <FaGithub />
                   </Link>
                 </Button>
-                <Button className="bg-[#272626] hover:bg-[#222121] text-gray hover:text-white cursor-none">
+                <Button className="bg-[#272626] hover:bg-[#222121] text-gray hover:text-white">
                   <Link
                     href="https://www.linkedin.com/in/nudhana-sarutipaisan/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="cursor-none"
                   >
-                    <FaLinkedin className="cursor-none" />
+                    <FaLinkedin />
                   </Link>
                 </Button>
               </div>

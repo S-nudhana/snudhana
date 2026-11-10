@@ -32,7 +32,7 @@ export default function ProjectCard({ projectData }: { projectData: Project }) {
       </CardContent>
       <CardFooter className="flex justify-end mt-[10px] px-0">
         <Link href={`/projects/${projectData.id}`} className="w-full">
-          <Button className="w-full text-yellow bg-[#272626] hover:bg-[#222121] cursor-none">More Detail</Button>
+          <Button className="w-full text-yellow bg-[#272626] hover:bg-[#222121]">More Detail</Button>
         </Link>
       </CardFooter>
     </Card>

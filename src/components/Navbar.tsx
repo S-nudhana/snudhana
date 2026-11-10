@@ -12,6 +12,8 @@ import { Button } from "@/components/ui/button";
 
 import { menu } from "@/data/menuList";
 
+const visibleMenu = menu.filter((item) => !item.hidden);
+
 export default function Navbar() {
   const [isSheetOpen, setIsSheetOpen] = useState<boolean>(false);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
@@ -64,7 +66,7 @@ export default function Navbar() {
           <SheetHeader className="h-full flex items-start px-5 md:px-10">
             <div className='pt-[80px]'>
               <div className="flex flex-col gap-10">
-                {menu.map((item, key) => {
+                {visibleMenu.map((item, key) => {
                   const handleClick = (e: React.MouseEvent) => {
                     if (isInAnotherPage) {
                       e.preventDefault();

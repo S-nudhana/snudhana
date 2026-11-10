@@ -68,7 +68,8 @@ export default {
 				}
 			},
 			fontFamily: {
-				primary: 'var(--font-primary)'
+				primary: 'var(--font-primary)',
+				display: 'var(--font-display)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -5,14 +5,13 @@
 :root {
   --font-primary: "Lato", sans-serif;
 
-  --black: #151414;
+  --black: #0f0e0e;
   --gray: #bcbbbb;
   --yellow: #b3a781;
   --red: #d69492;
   --green: #a7d2b4;
   --white: #ffffff;
   scroll-behavior: smooth;
-  cursor: none;
 }
 
 body {
@@ -98,6 +97,7 @@ body {
   }
 }
 
+
 @layer base {
   * {
     @apply border-border;
@@ -112,3 +112,4 @@ body {
     width: calc(60% - 10px);
   }
 }
+
