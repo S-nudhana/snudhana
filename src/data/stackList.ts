@@ -1,13 +1,13 @@
 import type { Stack } from "@/types/stack";
 
 export const stackList: Stack[] = [
-  { name: "TypeScript", category: "Computer Languages" },
-  { name: "Kotlin", category: "Computer Languages" },
-  { name: "Go", category: "Computer Languages" },
-  { name: "C#", category: "Computer Languages" },
-  { name: "Java", category: "Computer Languages" },
-  { name: "Python", category: "Computer Languages" },
-  { name: "SQL", category: "Computer Languages" },
+  { name: "TypeScript", category: "Languages" },
+  { name: "Kotlin", category: "Languages" },
+  { name: "Go", category: "Languages" },
+  { name: "C#", category: "Languages" },
+  { name: "Java", category: "Languages" },
+  { name: "Python", category: "Languages" },
+  { name: "SQL", category: "Languages" },
 
   { name: "ReactJS", category: "Frontend" },
   { name: "NextJS", category: "Frontend" },
@@ -30,11 +30,11 @@ export const stackList: Stack[] = [
   { name: "MongoDB", category: "Database" },
   { name: "InfluxDB", category: "Database" },
 
-  { name: "Docker", category: "DevOps" },
-  { name: "Git", category: "DevOps" },
-  { name: "CI/CD", category: "DevOps" },
-  { name: "Nginx", category: "DevOps" },
-  { name: "VM", category: "DevOps" },
-  { name: "Grafana", category: "DevOps" },
-  { name: "OpenTelemetry", category: "DevOps" },
+  { name: "Docker", category: "DevOps and Infrastructure" },
+  { name: "Git", category: "DevOps and Infrastructure" },
+  { name: "CI/CD", category: "DevOps and Infrastructure" },
+  { name: "Nginx", category: "DevOps and Infrastructure" },
+  { name: "VM", category: "DevOps and Infrastructure" },
+  { name: "Grafana", category: "DevOps and Infrastructure" },
+  { name: "OpenTelemetry", category: "DevOps and Infrastructure" },
 ];

@@ -44,10 +44,10 @@ export default function ExperienceSection() {
                     <span className="absolute -left-[26px] top-1 h-2.5 w-2.5 rounded-full bg-neutral-500 ring-4 ring-[#0f0e0e]" />
 
                     <h3 className="font-semibold text-white">{role.title}</h3>
-                    <p className="text-gray">
-                      {role.employmentType && `${role.employmentType} · `}
-                      {role.period}
-                    </p>
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                      <p className="text-gray">{role.employmentType}</p>
+                      <p className="shrink-0 text-[13px] text-neutral-500">{role.period}</p>
+                    </div>
 
                     {role.description && (
                       <p className="mt-3 leading-relaxed text-gray">

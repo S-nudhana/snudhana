@@ -2,7 +2,7 @@ import type { Experience } from "@/types/experience";
 
 export const experienceList: Experience[] = [
   {
-    company: "Agoda",
+    company: "Agoda Services Co., Ltd.",
     logo: "/images/Experience/agoda.svg",
     location: "Bangkok City, Thailand · Hybrid",
     roles: [
@@ -19,7 +19,7 @@ export const experienceList: Experience[] = [
     ],
   },
   {
-    company: "SIT - KMUTT",
+    company: "School of Information Technology - KMUTT",
     logo: "/images/Experience/sit-kmutt-mark.png",
     location: "Bangkok City, Thailand · Hybrid",
     roles: [
@@ -43,7 +43,7 @@ export const experienceList: Experience[] = [
     ],
   },
   {
-    company: "CLUO",
+    company: "Vello 24 Co., Ltd. (CLUO)",
     logo: "/images/Experience/cluo-mark.png",
     location: "Remote",
     roles: [

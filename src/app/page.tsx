@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,6 +9,8 @@ import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
+import DitherVeil from "@/components/DitherVeil";
+import { ScrambleOnHover } from "@/components/ScrambledText";
 import ExperienceSection from "@/components/ExperienceSection";
 import EducationSection from "@/components/EducationSection";
 
@@ -96,13 +97,20 @@ export default function Page() {
           <div className="md:ml-[300px] text-gray flex flex-col gap-7 w-full">
             <section id="#">
               <div className="md:hidden flex items-center justify-left gap-5 mb-[40px]">
-                <Image
-                  src={image}
-                  alt="profilePic"
-                  width={80}
-                  height={80}
-                  className="rounded-full"
-                />
+                <div className="h-20 w-20 shrink-0 overflow-hidden rounded-full">
+                  <DitherVeil
+                    src={image.src}
+                    fit="cover"
+                    pattern="floyd"
+                    pixelSize={2}
+                    inkColor="#0f0e0e"
+                    paperColor="#bcbbbb"
+                    revealRadius={70}
+                    softness={0.6}
+                    linger={1}
+                    clickBurst={false}
+                  />
+                </div>
                 <div className="flex flex-col gap-2">
                   <h1 className="font-display text-yellow text-[28px]">
                     Nudhana Sarutipaisan
@@ -229,12 +237,12 @@ export default function Page() {
                       {isOpen ? (
                         <>
                           <FaAngleUp />
-                          Show Less
+                          <ScrambleOnHover>Show Less</ScrambleOnHover>
                         </>
                       ) : (
                         <>
                           <FaAngleDown />
-                          Show More
+                          <ScrambleOnHover>Show More</ScrambleOnHover>
                         </>
                       )}
                     </button>

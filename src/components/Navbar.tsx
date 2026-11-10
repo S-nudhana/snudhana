@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
+import { ScrambleOnHover } from "@/components/ScrambledText";
 import { menu } from "@/data/menuList";
 
 const visibleMenu = menu.filter((item) => !item.hidden);
@@ -84,7 +85,9 @@ export default function Navbar() {
                         handleTabClick();
                       }}
                     >
-                      <a href={isInAnotherPage ? item.path : item.href}>{item.title}</a>
+                      <a href={isInAnotherPage ? item.path : item.href}>
+                        <ScrambleOnHover>{item.title}</ScrambleOnHover>
+                      </a>
                     </Button>
                   );
                 })}
