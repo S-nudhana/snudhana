@@ -268,10 +268,10 @@ export default function Page() {
               <p className="text-gray mt-[10px]">
                 For work, mail me at{" "}
                 <a
-                  href="mailto:nu37317@gmail.com"
+                  href="mailto:nudhana.saru@gmail.com"
                   className="text-white hover:underline underline-offset-[3px]"
                 >
-                  nu37317@gmail.com
+                  nudhana.saru@gmail.com
                 </a>
               </p>
               <div className="mt-[15px] flex items-center gap-3">
