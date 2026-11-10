@@ -28,6 +28,12 @@ export const menu: MenuItem[] = [
         path: "/#stack",
     },
     {
+        id: "education",
+        title: "Education",
+        href: "#education",
+        path: "/#education",
+    },
+    {
         id: "contact",
         title: "Contact",
         href: "#contact",
