@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FaAngleLeft } from "react-icons/fa6";
+import { ScrambleOnHover } from "@/components/ScrambledText";
 
 export default function BackButton() {
   return (
@@ -10,7 +11,7 @@ export default function BackButton() {
       >
         <FaAngleLeft />
         <span className="text-[16px] text-gray group-hover:translate-x-[4px] group-hover:text-white duration-200 ease-in-out">
-          Back
+          <ScrambleOnHover>Back</ScrambleOnHover>
         </span>
       </Button>
     </Link>

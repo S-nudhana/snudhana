@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
+import DitherVeil from "@/components/DitherVeil";
 import { Button } from "./ui/button";
 
 import image from "../../public/images/ProfilePicture.jpg";
 
+import { ScrambleOnHover } from "@/components/ScrambledText";
 import { menu } from "@/data/menuList"
 
 const visibleMenu = menu.filter((item) => !item.hidden);
@@ -23,13 +24,20 @@ export default function Sidebar() {
 
   return (
     <div className="hidden md:flex flex-col w-[240px] gap-6 fixed">
-      <Image
-        src={image.src}
-        alt="profilePic"
-        width={80}
-        height={80}
-        className="rounded-full"
-      />
+      <div className="h-20 w-20 shrink-0 overflow-hidden rounded-full">
+        <DitherVeil
+          src={image.src}
+          fit="cover"
+          pattern="floyd"
+          pixelSize={2}
+          inkColor="#0f0e0e"
+          paperColor="#bcbbbb"
+          revealRadius={70}
+          softness={0.6}
+          linger={1}
+          clickBurst={false}
+        />
+      </div>
       <div>
         <h1 className="font-display text-yellow text-[28px]">
           Nudhana Sarutipaisan
@@ -60,7 +68,9 @@ export default function Sidebar() {
               } hover:bg-transparent w-full justify-start p-0 text-[16px]`}
               onClick={handleClick}
             >
-              <a href={isInProjectPage || isInResumePage ? item.path : item.href}>{item.title}</a>
+              <a href={isInProjectPage || isInResumePage ? item.path : item.href}>
+                <ScrambleOnHover fontFamily="">{item.title}</ScrambleOnHover>
+              </a>
             </Button>
           );
         })}
