@@ -4,7 +4,7 @@ export const educationList: Education[] = [
   {
     institution: "King Mongkut's University of Technology Thonburi",
     degree: "Bachelor of Science - B.Sc, Computer Science",
-    period: "2023 - 2027",
+    period: "Aug 2023 - May 2027",
     grade: "3.86",
   },
   {
