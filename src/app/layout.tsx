@@ -30,21 +30,36 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/images/Sn.png" />
         <title>snudhana</title>
+        <meta name="theme-color" content="#1a1918" />
       </head>
       <body>
         <div className="fixed inset-0 z-0 pointer-events-none">
-          <Dither
-            palette={["#0f0e0e", "#191817", "#232221", "#2d2b2a"]}
-            ditherMode="bayer"
-            colorNum={4}
-            pixelSize={2}
-            waveSpeed={0.05}
-            waveFrequency={3}
-            waveAmplitude={0.3}
-            mouseEffect="erase"
-            mouseRadius={0.3}
-            clickRipple={false}
-          />
+          <div className="absolute inset-0">
+            <Dither
+              palette={["#0f0e0e", "#191817", "#232221", "#2d2b2a"]}
+              ditherMode="bayer"
+              colorNum={4}
+              pixelSize={2}
+              disableAnimation
+              enableMouseInteraction={false}
+              clickRipple={false}
+              intro={false}
+            />
+          </div>
+          <div className="absolute inset-0">
+            <Dither
+              palette={["#0f0e0e", "#191817", "#232221", "#2d2b2a"]}
+              ditherMode="bayer"
+              colorNum={4}
+              pixelSize={2}
+              waveSpeed={0.05}
+              waveFrequency={3}
+              waveAmplitude={0.3}
+              mouseEffect="erase"
+              mouseRadius={0.3}
+              clickRipple={false}
+            />
+          </div>
         </div>
         <div className="relative z-10">
           <LenisProvider>
